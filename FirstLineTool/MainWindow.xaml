@@ -1,0 +1,182 @@
+﻿<Window x:Class="FirstLineTool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        Height="800" Width="1250" 
+        WindowStartupLocation="CenterScreen" 
+        WindowStyle="None"
+        Loaded="Window_Loaded"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        AllowsTransparency="True" 
+        Background="Transparent">
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+    </Window.Resources>
+
+    <Border Background="White" CornerRadius="10" 
+            BorderBrush="#bf072f"
+            BorderThickness="1"
+            MouseDown="Border_MouseDown" 
+            >
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <!-- Title Bar -->
+                <RowDefinition Height="*"/>
+                <!-- Main Content -->
+            </Grid.RowDefinitions>
+
+            <!-- Custom Title Bar -->
+            <DockPanel Grid.Row="0" LastChildFill="False">
+                <TextBlock Text="FirstLine Tool Handling" 
+                           VerticalAlignment="Center" 
+                           Margin="15,0,0,0"
+                           Foreground="Black" 
+                           FontWeight="Bold" 
+                           FontSize="18"/>
+
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" Margin="0,0,5,0">
+                    <!-- Minimize -->
+                    <Button Name="btnMinimize"  Style="{StaticResource topButton}"
+                            Click="btnMinimize_Click">
+                        <Icon:PackIconMaterial Kind="WindowMinimize" Width="12" Height="12"/>
+                    </Button>
+
+                    <Button Name="btnMaxmize" Style="{StaticResource topButton}"
+                            Click="btnMaxmize_Click">
+                        <Icon:PackIconMaterial Kind="WindowMaximize" Width="12" Height="12"/>
+                    </Button>
+
+                    <!-- Close -->
+                    <Button Name="btnClose" Style="{StaticResource topButton}"
+                            Click="btnClose_Click">
+                        <Icon:PackIconMaterial Kind="Close" Width="12" Height="12"/>
+                    </Button>
+                </StackPanel>
+            </DockPanel>
+
+            <!-- Main Content -->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition x:Name="MenuColumn" Width="250"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Left Menu -->
+                <Grid Grid.Column="0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- Menu Icon -->
+                        <Button Name="btnSideMenu" Margin="10 0 0 0" Style="{StaticResource topButton}" Click="btnSideMenu_Click">
+                            <Icon:PackIconMaterial Kind="Menu" Width="15" Height="15"/>
+                        </Button>
+
+                        <Border Grid.Row="1" Background="#bf072f" CornerRadius="0 25 0 10">
+                            <DockPanel>
+                                <!-- Menu Titles -->
+                                <TextBlock x:Name="txtName"
+                                           Margin="5 25 0 10" Text="Name" Foreground="White" 
+                                           FontSize="18" FontWeight="SemiBold"
+                                           DockPanel.Dock="Top" TextAlignment="Center"/>
+
+                                <TextBlock x:Name="txtTitle" Margin="5 0 0 10" Text="Title"  Foreground="#ffbfcc" 
+                                           FontSize="12" DockPanel.Dock="Top" TextAlignment="Center"/>
+
+                                <!-- Menu Separator -->
+                                <Separator x:Name="separatorofsidemenu" Margin="25" DockPanel.Dock="Top" Height="0.8" Background="#dc5f7e"/>
+
+                                <!-- Menu Buttons -->
+                                <StackPanel DockPanel.Dock="Top" x:Name="MenuPanel">
+                                    <Button Name="btnDashboard" Click="btnDashboard_Click" Style="{StaticResource menuButton}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Icon:PackIconMaterial Kind="ViewDashboardOutline" Style="{StaticResource menuButtonIcon}"/>
+                                            <TextBlock x:Name="txtDashboard" Text="Dashboard" Margin="10,0,0,0"/>
+                                        </StackPanel>
+                                    </Button>
+
+                                    <Button Name="btnExport" Click="btnExport_Click" Style="{StaticResource menuButton}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Icon:PackIconMaterial Kind="Export" Style="{StaticResource menuButtonIcon}"/>
+                                            <TextBlock x:Name="txtExport" Text="Export Queue" Margin="10,0,0,0"/>
+                                        </StackPanel>
+                                    </Button>
+
+                                    <Button Name="btnDatabase" Click="btnDatabase_Click" Style="{StaticResource menuButton}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Icon:PackIconMaterial Kind="Database" Style="{StaticResource menuButtonIcon}"/>
+                                            <TextBlock x:Name="txtDatabase" Text="Database" Margin="10,0,0,0"/>
+                                        </StackPanel>
+                                    </Button>
+
+                                    <Button Name="btnServer" Click="btnServer_Click" Style="{StaticResource menuButton}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Icon:PackIconMaterial Kind="ServerNetwork" Style="{StaticResource menuButtonIcon}"/>
+                                            <TextBlock x:Name="txtServer" Text="Server" Margin="10,0,0,0"/>
+                                        </StackPanel>
+                                    </Button>
+
+                                    <Button Name="btnExpress" Click="btnExpress_Click" Style="{StaticResource menuButton}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Icon:PackIconMaterial Kind="Flash" Style="{StaticResource menuButtonIcon}"/>
+                                            <TextBlock x:Name="txtExpress" Text="Express Senarios" Margin="10,0,0,0"/>
+                                        </StackPanel>
+                                    </Button>
+
+                                    <Button Name="btnIN" Click="btnIN_Click" Style="{StaticResource menuButton}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Icon:PackIconMaterial Kind="Network" Style="{StaticResource menuButtonIcon}"/>
+                                            <TextBlock x:Name="txtIN" Text="IN Senarios" Margin="10,0,0,0"/>
+                                        </StackPanel>
+                                    </Button>
+
+                                    <Button Name="btnUsers" Click="btnUsers_Click" Style="{StaticResource menuButton}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Icon:PackIconMaterial Kind="AccountGroup" Style="{StaticResource menuButtonIcon}"/>
+                                            <TextBlock x:Name="txtUsers" Text="Users Management" Margin="10,0,0,0"/>
+                                        </StackPanel>
+                                    </Button>
+
+                                    <Button Name="btnCredentials" Click="btnCredentials_Click" Style="{StaticResource menuButton}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Icon:PackIconMaterial Kind="AccountKey" Style="{StaticResource menuButtonIcon}"/>
+                                            <TextBlock x:Name="txtCredentials" Text="User Credentials" Margin="10,0,0,0"/>
+                                        </StackPanel>
+                                    </Button>
+
+                                    <Button Name="btnUserInfo" Click="btnUserInfo_Click" Style="{StaticResource menuButton}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Icon:PackIconMaterial Kind="Information" Style="{StaticResource menuButtonIcon}"/>
+                                            <TextBlock x:Name="txtUserInfo" Text="User Information" Margin="10,0,0,0"/>
+                                        </StackPanel>
+                                    </Button>
+
+                                </StackPanel>
+
+                                <!-- Logout -->
+                                <Button Name="btnLogout" Style="{StaticResource menuButton}" Click="btnLogout_ClickAsync" DockPanel.Dock="Bottom" VerticalAlignment="Bottom">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Icon:PackIconMaterial Kind="Logout" Style="{StaticResource menuButtonIcon}"/>
+                                        <TextBlock x:Name="txtLogout" Text="Logout" Margin="10,0,0,0"/>
+                                    </StackPanel>
+                                </Button>
+                            </DockPanel>
+                        </Border>
+                    </Grid>
+                </Grid>
+
+                <!-- Main Section -->
+                <Border Grid.Column="1" Background="White" CornerRadius="0 0 10 0" Margin="10,0,10,10">
+                    <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
+                </Border>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

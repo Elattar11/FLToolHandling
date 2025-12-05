@@ -1,0 +1,309 @@
+﻿<Page x:Class="FirstLineTool.View.Users_Management_Pages.UsersManagementPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      Loaded="Page_Loaded"
+      Title="UsersManagementPage" >
+
+    <Page.Resources>
+        <Style TargetType="ScrollBar" BasedOn="{x:Null}">
+            <Setter Property="MinWidth" Value="10"/>
+            <Setter Property="Width" Value="10"/>
+
+            <Setter Property="Background" Value="Transparent"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ScrollBar">
+                        <Grid Background="{TemplateBinding Background}">
+                            <Track x:Name="PART_Track" IsDirectionReversed="true">
+                                <Track.Thumb>
+                                    <Thumb>
+                                        <Thumb.Template>
+                                            <ControlTemplate TargetType="Thumb">
+                                                <Border x:Name="thumbBorder"
+                                            CornerRadius="5"
+                                            Background="#a00628"
+                                            Margin="1,0"
+                                            SnapsToDevicePixels="True"/>
+                                            </ControlTemplate>
+                                        </Thumb.Template>
+                                    </Thumb>
+                                </Track.Thumb>
+                            </Track>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Background="White">
+        <StackPanel Margin="20">
+            <!-- Users + ComboBoxes + Teams Button -->
+            <Grid>
+                <!-- الجزء العلوي: Users + ComboBoxes -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Border Background="White"
+                Padding="5"
+                Width="200"
+                Height="110"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Margin="0,0,10,0">
+                        <TextBox x:Name="txtUsers"
+                     Background="Transparent"
+                     BorderThickness="0"
+                     AcceptsReturn="True"
+                     TextWrapping="Wrap"
+                     VerticalScrollBarVisibility="Auto"
+                     materialDesign:HintAssist.Hint="Enter Users"
+                     Padding="5"/>
+                    </Border>
+
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+                        <ComboBox x:Name="cbxTeams" Width="200" Margin="0,0,0,5"
+                      Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                      materialDesign:HintAssist.Hint="Select Team"/>
+                        <ComboBox x:Name="cbxRoles" Width="200" Margin="0,5,0,0"
+                      Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                      materialDesign:HintAssist.Hint="Select Role">
+
+                            <ComboBoxItem Content="Admin"/>
+                            <ComboBoxItem Content="User"/>
+
+                        </ComboBox>
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- زر Teams فوق على اليمين -->
+                <Button x:Name="btnTeams"
+            Content="Teams"
+            Width="120"
+            Height="35"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Margin="0,0,0,0"
+            Background="#b9052f"
+            Foreground="White"
+            materialDesign:ButtonAssist.CornerRadius="16"
+            Style="{StaticResource MaterialDesignRaisedButton}" Click="btnTeams_Click_1"/>
+
+                
+            </Grid>
+
+
+            <!-- Search -->
+            <StackPanel Orientation="Horizontal" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Top"
+            Margin="0 20 0 0">
+
+                <!-- TextBox داخل Border علشان يكون دائري -->
+                <Border CornerRadius="20"
+            Background="White"
+            Padding="10 5"
+            Width="300"
+            Height="38"
+            BorderBrush="#bf072f"
+            BorderThickness="1">
+
+                    <TextBox x:Name="txtSearch"
+            Background="Transparent"
+            BorderThickness="0"
+            Foreground="Black"
+            FontSize="14"
+            KeyDown="txtSearch_KeyDown"
+            VerticalContentAlignment="Center"
+            materialDesign:HintAssist.Hint="Username..."/>
+                </Border>
+
+                <!-- زرار الأيقونة -->
+                <Button x:Name="btnSearch"
+            Width="38"
+            Height="38"
+            Margin="10 0 0 0"
+            Background="Transparent"
+            BorderBrush="#bf072f"
+            BorderThickness="1"
+            ToolTip="Search"
+            Click="btnSearch_Click"
+            Cursor="Hand">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border CornerRadius="19" 
+                        BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}" 
+                        Background="{TemplateBinding Background}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                    <Icon:PackIconMaterial Kind="Magnify" Width="18" Height="18" Foreground="#bf072f"/>
+                </Button>
+            </StackPanel>
+
+            <!-- DataGrid -->
+                  <DataGrid x:Name="dgUsers"
+                  Margin="0 10 0 10"
+                  AutoGenerateColumns="True"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  IsReadOnly="True"
+                  MaxHeight="200"
+                  VerticalScrollBarVisibility="Auto"
+                  HorizontalScrollBarVisibility="Auto"
+                  SelectionChanged="dgUsers_SelectionChanged"
+                  HeadersVisibility="Column"
+                  GridLinesVisibility="All"
+                  BorderBrush="#dddddd"
+                  BorderThickness="1"
+                  HorizontalGridLinesBrush="#e0e0e0"
+                  VerticalGridLinesBrush="#e0e0e0"
+                  RowBackground="White"
+                  AlternatingRowBackground="#fafafa"
+                  Style="{StaticResource MaterialDesignDataGrid}"
+                  ColumnWidth="*">
+          <DataGrid.Resources>
+              <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+              <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black"/>
+          </DataGrid.Resources>
+
+          <!-- ✅ Cell Style -->
+          <DataGrid.CellStyle>
+              <Style TargetType="DataGridCell">
+                  <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+                  <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                  <Setter Property="VerticalContentAlignment" Value="Center"/>
+                  <Setter Property="Padding" Value="5,0"/>
+                  <Setter Property="BorderThickness" Value="0.5"/>
+                  <Setter Property="BorderBrush" Value="#dddddd"/>
+                  <Setter Property="Template">
+                      <Setter.Value>
+                          <ControlTemplate TargetType="DataGridCell">
+                              <Border BorderBrush="{TemplateBinding BorderBrush}"
+    BorderThickness="{TemplateBinding BorderThickness}"
+    Background="{TemplateBinding Background}">
+                                  <ContentPresenter 
+    VerticalAlignment="Center"
+    HorizontalAlignment="Center"
+    RecognizesAccessKey="True"/>
+                              </Border>
+                          </ControlTemplate>
+                      </Setter.Value>
+                  </Setter>
+              </Style>
+          </DataGrid.CellStyle>
+
+          <!-- ✅ Header Style -->
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader"
+                BasedOn="{StaticResource MaterialDesignDataGridColumnHeader}">
+                        <Setter Property="Background" Value="#bf072f"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="FontSize" Value="14"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        <Setter Property="VerticalContentAlignment" Value="Center"/>
+                        <Setter Property="Height" Value="35"/>
+
+                        <!-- الفاصل -->
+                        <Setter Property="BorderBrush" Value="White"/>
+                        <Setter Property="BorderThickness" Value="0,0,1,0"/>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+
+                <!-- ✅ Row Style -->
+          <DataGrid.RowStyle>
+              <Style TargetType="DataGridRow">
+                  <Setter Property="FontSize" Value="13"/>
+                  <Setter Property="Height" Value="30"/>
+                  <Setter Property="Background" Value="White"/>
+                  <Setter Property="SnapsToDevicePixels" Value="True"/>
+                  <Setter Property="BorderBrush" Value="#dddddd"/>
+                  <Setter Property="BorderThickness" Value="0,0,0,1"/>
+
+                  <Setter Property="Template">
+                      <Setter.Value>
+                          <ControlTemplate TargetType="DataGridRow">
+                              <Border x:Name="RowBorder"
+Background="{TemplateBinding Background}"
+BorderBrush="{TemplateBinding BorderBrush}"
+BorderThickness="{TemplateBinding BorderThickness}"
+CornerRadius="3"
+SnapsToDevicePixels="True"
+>
+                                  <DataGridCellsPresenter x:Name="CellsPresenter" />
+                              </Border>
+
+                              <ControlTemplate.Triggers>
+
+                                  <!-- Hover -->
+                                  <Trigger Property="IsMouseOver" Value="True">
+                                      <Setter TargetName="RowBorder" Property="Background" Value="#fff2f2"/>
+                                  </Trigger>
+
+                                  <!-- ✅ Selected Row Style -->
+                                  <Trigger Property="IsSelected" Value="True">
+                                      <Setter TargetName="RowBorder" Property="Background" Value="#ffe6e6"/>
+                                      <Setter Property="Foreground" Value="#bf072f"/>
+                                      <Setter Property="FontWeight" Value="Bold"/>
+                                      <Setter Property="Effect">
+                                          <Setter.Value>
+                                              <DropShadowEffect Color="#bf072f"
+                          BlurRadius="10"
+                          ShadowDepth="0"
+                          Opacity="0.2"/>
+                                          </Setter.Value>
+                                      </Setter>
+                                  </Trigger>
+
+                              </ControlTemplate.Triggers>
+                          </ControlTemplate>
+                      </Setter.Value>
+                  </Setter>
+              </Style>
+          </DataGrid.RowStyle>
+
+      </DataGrid>
+
+            <!-- Action Buttons -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,0">
+                <Button Content="Add"
+        x:Name="btnAdd"
+        Width="100" Height="35"
+        Margin="5 0"
+        Background="#07bf62"
+        BorderBrush="Transparent"
+        Foreground="White" Click="btnAdd_Click"/>
+
+                <Button Content="Update"
+        x:Name="btnUpdate"
+        Width="100" Height="35"
+        Margin="5 0"
+        Background="#076ebf"
+        BorderBrush="Transparent"
+        Foreground="White" Click="btnUpdate_Click"/>
+
+                <Button Content="Delete"
+        x:Name="btnDelete"
+        Width="100" Height="35"
+        Margin="5 0"
+        Background="#bf072f"
+        BorderBrush="Transparent"
+        Foreground="White" Click="btnDelete_Click"/>
+
+                <Button Content="Reset"
+        x:Name="btnReset"
+        Width="100" Height="35"
+        Margin="5 0"
+        Background="#d84315"
+        BorderBrush="Transparent"
+        Foreground="White" Click="btnReset_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

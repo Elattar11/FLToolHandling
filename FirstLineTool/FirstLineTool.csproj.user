@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_LastSelectedProfileId>E:\Projects\FirstLineTool\FirstLineTool\Properties\PublishProfiles\ClickOnceProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="View\Alert\MyMessageBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Alert\ToastWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Dashboard\DashboadrQuery.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Dashboard\DashboardPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Database Pages\DatabaseConnections.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Database Pages\DatabaseLayerPages.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Database Pages\DatabaseQueries.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\ExportQueue\ExportQueuePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\ExportQueue\ExportQueueSettings.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\ExportQueue\QueueQuerySettings.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Express Senarios\EXTemp.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\IN Senarios\INTemp.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\LoadingScreen.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\LoginView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Server Pages\PathParametersPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Server Pages\ServerPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Server Pages\ServerPathsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Server Pages\ServerSettingsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Users Management Pages\AllSetPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Users Management Pages\PersonalInformationPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Users Management Pages\ResetPasswordPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Users Management Pages\TeamsManagementPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Users Management Pages\UserCredentialsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Users Management Pages\UserInformationPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Users Management Pages\UsersManagementPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Alert\MyMessageBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Alert\ToastWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Dashboard\DashboadrQuery.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Dashboard\DashboardPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Database Pages\DatabaseConnections.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Database Pages\DatabaseLayerPages.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Database Pages\DatabaseQueries.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ExportQueue\ExportQueuePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ExportQueue\ExportQueueSettings.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ExportQueue\QueueQuerySettings.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Express Senarios\EXTemp.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\IN Senarios\INTemp.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\LoadingScreen.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\LoginView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Server Pages\PathParametersPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Server Pages\ServerPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Server Pages\ServerPathsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Server Pages\ServerSettingsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Users Management Pages\AllSetPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Users Management Pages\PersonalInformationPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Users Management Pages\ResetPasswordPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Users Management Pages\TeamsManagementPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Users Management Pages\UserCredentialsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Users Management Pages\UserInformationPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Users Management Pages\UsersManagementPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

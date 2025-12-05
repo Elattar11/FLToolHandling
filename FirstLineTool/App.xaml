@@ -1,0 +1,217 @@
+﻿<Application x:Class="FirstLineTool.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             StartupUri="View/LoginView.xaml">
+    <Application.Resources>
+        
+        
+
+        
+        
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                
+
+
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+
+                
+                <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="Red" SecondaryColor="DeepOrange"/>
+
+
+            </ResourceDictionary.MergedDictionaries>
+            
+            
+
+            <Style x:Key="topButton" TargetType="Button">
+
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="#6e7783"/>
+                <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                <Setter Property="Width" Value="30"/>
+                <Setter Property="Height" Value="30"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="50">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            
+                        </ControlTemplate>
+                    </Setter.Value>
+                    
+                </Setter>
+
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="#dcdcdc"/>
+                    </Trigger>
+                </Style.Triggers>
+                
+
+
+            </Style>
+
+            
+
+
+
+            <Style x:Key="menuButton" TargetType="Button">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="#ffc0d0"/>
+                <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                <Setter Property="Height" Value="35"/>
+                <Setter Property="Margin" Value="5 3"/>
+                <Setter Property="FontSize" Value="13"/>
+
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="7">
+                                <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+
+                <Style.Triggers>
+                    <!-- Hover -->
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="#d65c7b"/>
+                        <Setter Property="Foreground" Value="#ffffff"/>
+                    </Trigger>
+
+                    <!-- Active button-->
+                    <Trigger Property="Tag" Value="Active">
+                        <Setter Property="Background" Value="#d65c7b"/>
+                        <Setter Property="Foreground" Value="#ffffff"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+
+            <Style x:Key="menuButtonIcon" TargetType="Icon:PackIconMaterial">
+                <Setter Property="Width" Value="15"/>
+                <Setter Property="Height" Value="15"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Margin" Value="20 2 20 0"/>
+
+            </Style>
+
+            <Style x:Key="textBoxSearch" TargetType="TextBox">
+                <Setter Property="Background" Value="#ffffff"/>
+                <Setter Property="Foreground" Value="#b0b9c6"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="Padding" Value="20 0 40 0"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Margin" Value="5 10"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="MinHeight" Value="38"/>
+                
+
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="TextBox">
+                            <Border x:Name="border" CornerRadius="20" Background="{TemplateBinding Background}" SnapsToDevicePixels="True"
+                                    BorderThickness="1" BorderBrush="#e0e6ed">
+                                <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden"
+                                              VerticalScrollBarVisibility="Hidden"/>
+                            </Border>
+                            
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="BorderBrush" Value="#d9d9d9" TargetName="border"/>
+                                </Trigger>
+
+                                <Trigger Property="IsKeyboardFocused" Value="True">
+                                    <Setter Property="BorderBrush" Value="#d9d9d9" TargetName="border"/>
+                                </Trigger>
+                                
+                            </ControlTemplate.Triggers>
+                            
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            
+            
+            
+
+            <Style x:Key="RedScrollBar" TargetType="ScrollBar">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ScrollBar">
+                            <Grid Background="{TemplateBinding Background}">
+                                <Track x:Name="PART_Track"
+                           IsDirectionReversed="False"
+                           Focusable="false">
+                                    <!-- الجزء اللي بيتحرك -->
+                                    <Track.Thumb>
+                                        <Thumb Background="Red" />
+                                    </Track.Thumb>
+                                    <!-- الأزرار يمين/شمال -->
+                                    <Track.IncreaseRepeatButton>
+                                        <RepeatButton Style="{x:Null}" Background="Transparent"/>
+                                    </Track.IncreaseRepeatButton>
+                                    <Track.DecreaseRepeatButton>
+                                        <RepeatButton Style="{x:Null}" Background="Transparent"/>
+                                    </Track.DecreaseRepeatButton>
+                                </Track>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            
+
+            <Style x:Key="ScrollableMaterialDesignTabControl"
+                            TargetType="TabControl"
+                            BasedOn="{StaticResource MaterialDesignTabControl}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="TabControl">
+                            <Grid KeyboardNavigation.TabNavigation="Local">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <!-- Scrollable Tab Headers -->
+                                <Border Grid.Row="0" Background="Transparent">
+                                    <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                                      VerticalScrollBarVisibility="Disabled"
+                                      CanContentScroll="False"
+                                      Focusable="False">
+                                        <ScrollViewer.Resources>
+                                            <!-- ندي الـ ScrollBar استايل الأحمر -->
+                                            <Style TargetType="ScrollBar" BasedOn="{StaticResource RedScrollBar}"/>
+                                        </ScrollViewer.Resources>
+                                        <TabPanel x:Name="HeaderPanel"
+                                      IsItemsHost="True"
+                                      Margin="2,0,2,0"
+                                      Panel.ZIndex="1"/>
+                                    </ScrollViewer>
+                                </Border>
+
+                                <!-- Selected Content -->
+                                <ContentPresenter x:Name="PART_SelectedContentHost"
+                                      Grid.Row="1"
+                                      Margin="{TemplateBinding Padding}"
+                                      ContentSource="SelectedContent"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

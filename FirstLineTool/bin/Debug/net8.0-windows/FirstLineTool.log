@@ -1,0 +1,60 @@
+2025-12-02 12:10:22.571 - Error while initializing DatabaseSqliteConnection Exception: SqliteException - SQLite Error 14: 'unable to open database file'. | Stack:    at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteConnectionInternal..ctor(SqliteConnectionStringBuilder connectionOptions, SqliteConnectionPool pool)
+   at Microsoft.Data.Sqlite.SqliteConnectionPool.GetConnection()
+   at Microsoft.Data.Sqlite.SqliteConnectionFactory.GetConnection(SqliteConnection outerConnection)
+   at Microsoft.Data.Sqlite.SqliteConnection.Open()
+   at FirstLineTool.Core.ConnectionManager.ConnectionManager.GetConnection(String connectionString) in E:\Projects\FirstLineTool\FirstLineTool\Core\ConnectionManager\ConnectionManager.cs:line 27
+   at FirstLineTool.Core.DatabaseSqliteConnection..ctor(DatabaseType dbType) in E:\Projects\FirstLineTool\FirstLineTool\Core\DatabaseSqliteConnection.cs:line 34
+2025-12-02 12:10:33.384 - ReadData Failed. Query: SELECT * FROM Users WHERE Username = 'Mohamed.AMAAhmed' Exception: SqliteException - SQLite Error 14: 'unable to open database file'. | Stack:    at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteConnectionInternal..ctor(SqliteConnectionStringBuilder connectionOptions, SqliteConnectionPool pool)
+   at Microsoft.Data.Sqlite.SqliteConnectionPool.GetConnection()
+   at Microsoft.Data.Sqlite.SqliteConnectionFactory.GetConnection(SqliteConnection outerConnection)
+   at Microsoft.Data.Sqlite.SqliteConnection.Open()
+   at FirstLineTool.Core.ConnectionManager.ConnectionManager.GetConnection(String connectionString) in E:\Projects\FirstLineTool\FirstLineTool\Core\ConnectionManager\ConnectionManager.cs:line 33
+   at FirstLineTool.Core.DatabaseSqliteConnection.GetConn() in E:\Projects\FirstLineTool\FirstLineTool\Core\DatabaseSqliteConnection.cs:line 46
+   at FirstLineTool.Core.DatabaseSqliteConnection.ReadData(String statement, String msg) in E:\Projects\FirstLineTool\FirstLineTool\Core\DatabaseSqliteConnection.cs:line 73
+2025-12-02 12:11:10.209 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-02 15:21:21.375 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-02 15:27:34.798 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-02 15:34:33.884 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-02 15:35:04.961 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-02 15:37:03.545 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-02 15:37:58.997 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-02 15:44:43.279 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-02 15:45:56.567 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-02 16:44:18.887 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-03 11:07:59.520 - Error while initializing DatabaseSqliteConnection Exception: SqliteException - SQLite Error 14: 'unable to open database file'. | Stack:    at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteConnectionInternal..ctor(SqliteConnectionStringBuilder connectionOptions, SqliteConnectionPool pool)
+   at Microsoft.Data.Sqlite.SqliteConnectionPool.GetConnection()
+   at Microsoft.Data.Sqlite.SqliteConnectionFactory.GetConnection(SqliteConnection outerConnection)
+   at Microsoft.Data.Sqlite.SqliteConnection.Open()
+   at FirstLineTool.Core.ConnectionManager.ConnectionManager.GetConnection(String connectionString) in E:\Projects\FirstLineTool\FirstLineTool\Core\ConnectionManager\ConnectionManager.cs:line 27
+   at FirstLineTool.Core.DatabaseSqliteConnection..ctor(DatabaseType dbType) in E:\Projects\FirstLineTool\FirstLineTool\Core\DatabaseSqliteConnection.cs:line 34
+2025-12-03 11:08:08.683 - ReadData Failed. Query: SELECT * FROM Users WHERE Username = 'Mohamed.AMAAhmed' Exception: SqliteException - SQLite Error 14: 'unable to open database file'. | Stack:    at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteConnectionInternal..ctor(SqliteConnectionStringBuilder connectionOptions, SqliteConnectionPool pool)
+   at Microsoft.Data.Sqlite.SqliteConnectionPool.GetConnection()
+   at Microsoft.Data.Sqlite.SqliteConnectionFactory.GetConnection(SqliteConnection outerConnection)
+   at Microsoft.Data.Sqlite.SqliteConnection.Open()
+   at FirstLineTool.Core.ConnectionManager.ConnectionManager.GetConnection(String connectionString) in E:\Projects\FirstLineTool\FirstLineTool\Core\ConnectionManager\ConnectionManager.cs:line 33
+   at FirstLineTool.Core.DatabaseSqliteConnection.GetConn() in E:\Projects\FirstLineTool\FirstLineTool\Core\DatabaseSqliteConnection.cs:line 46
+   at FirstLineTool.Core.DatabaseSqliteConnection.ReadData(String statement, String msg) in E:\Projects\FirstLineTool\FirstLineTool\Core\DatabaseSqliteConnection.cs:line 73
+2025-12-03 11:08:25.836 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-03 11:12:00.273 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-03 11:13:03.030 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-03 11:13:37.811 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-03 11:48:57.678 - Error while initializing DatabaseSqliteConnection Exception: SqliteException - SQLite Error 14: 'unable to open database file'. | Stack:    at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteConnectionInternal..ctor(SqliteConnectionStringBuilder connectionOptions, SqliteConnectionPool pool)
+   at Microsoft.Data.Sqlite.SqliteConnectionPool.GetConnection()
+   at Microsoft.Data.Sqlite.SqliteConnectionFactory.GetConnection(SqliteConnection outerConnection)
+   at Microsoft.Data.Sqlite.SqliteConnection.Open()
+   at FirstLineTool.Core.ConnectionManager.ConnectionManager.GetConnection(String connectionString) in E:\Projects\FirstLineTool\FirstLineTool\Core\ConnectionManager\ConnectionManager.cs:line 27
+   at FirstLineTool.Core.DatabaseSqliteConnection..ctor(DatabaseType dbType) in E:\Projects\FirstLineTool\FirstLineTool\Core\DatabaseSqliteConnection.cs:line 34
+2025-12-03 11:49:18.096 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-03 12:08:07.034 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-03 12:10:22.187 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-03 12:11:18.095 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-03 12:13:19.798 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-03 12:22:12.878 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-03 12:23:32.257 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-03 12:34:03.932 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-03 12:35:18.161 - Connection initialized: WAL enabled, busy_timeout=3000ms

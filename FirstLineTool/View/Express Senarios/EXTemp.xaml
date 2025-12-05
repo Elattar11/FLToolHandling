@@ -1,0 +1,16 @@
+﻿<Page x:Class="FirstLineTool.View.Express_Senarios.EXTemp"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FirstLineTool.View.Express_Senarios"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EXTemp">
+
+    <Grid Background="White">
+        <TextBlock Text="COMING SOON" Foreground ="Black" FontSize="24" FontWeight="Bold" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center">
+            
+        </TextBlock>
+    </Grid>
+</Page>

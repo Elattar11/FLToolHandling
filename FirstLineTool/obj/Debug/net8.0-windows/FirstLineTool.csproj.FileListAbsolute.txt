@@ -1,0 +1,135 @@
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\FirstLineTool.exe
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\FirstLineTool.deps.json
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\FirstLineTool.runtimeconfig.json
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\FirstLineTool.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\FirstLineTool.pdb
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\ClosedXML.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\ClosedXML.Parser.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\DocumentFormat.OpenXml.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\DocumentFormat.OpenXml.Framework.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\ExcelNumberFormat.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\FontAwesome.WPF.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\MahApps.Metro.IconPacks.Core.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\MahApps.Metro.IconPacks.Material.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\MaterialDesignColors.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\MaterialDesignThemes.Wpf.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\Microsoft.Data.Sqlite.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\Oracle.ManagedDataAccess.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\OxyPlot.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\OxyPlot.Wpf.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\OxyPlot.Wpf.Shared.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\RBush.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\Renci.SshNet.Async.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\SixLabors.Fonts.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\SQLitePCLRaw.batteries_v2.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\SQLitePCLRaw.core.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\SQLitePCLRaw.provider.e_sqlite3.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\Renci.SshNet.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\SshNet.Security.Cryptography.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\System.DirectoryServices.Protocols.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\System.Formats.Asn1.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\System.IO.Packaging.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\System.Xml.XPath.XmlDocument.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\android-arm\native\libe_sqlite3.so
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\android-arm64\native\libe_sqlite3.so
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\android-x64\native\libe_sqlite3.so
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\android-x86\native\libe_sqlite3.so
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\browser-wasm\nativeassets\net8.0\e_sqlite3.a
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\ios-arm\native\e_sqlite3.a
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\ios-arm64\native\e_sqlite3.a
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\iossimulator-arm64\native\e_sqlite3.a
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\iossimulator-x64\native\e_sqlite3.a
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\iossimulator-x86\native\e_sqlite3.a
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\linux-arm\native\libe_sqlite3.so
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\linux-arm64\native\libe_sqlite3.so
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\linux-armel\native\libe_sqlite3.so
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\linux-mips64\native\libe_sqlite3.so
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\linux-musl-arm\native\libe_sqlite3.so
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\linux-musl-arm64\native\libe_sqlite3.so
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\linux-musl-s390x\native\libe_sqlite3.so
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\linux-musl-x64\native\libe_sqlite3.so
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\linux-ppc64le\native\libe_sqlite3.so
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\linux-s390x\native\libe_sqlite3.so
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libe_sqlite3.so
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\linux-x86\native\libe_sqlite3.so
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\maccatalyst-arm64\native\libe_sqlite3.dylib
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\maccatalyst-x64\native\libe_sqlite3.dylib
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\osx-arm64\native\libe_sqlite3.dylib
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\osx-x64\native\libe_sqlite3.dylib
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\win-arm64\native\e_sqlite3.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\win-x64\native\e_sqlite3.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\win-x86\native\e_sqlite3.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\linux\lib\net8.0\System.DirectoryServices.Protocols.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\osx\lib\net8.0\System.DirectoryServices.Protocols.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.DirectoryServices.Protocols.dll
+E:\Projects\FirstLineTool\FirstLineTool\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\FirstLineTool.csproj.AssemblyReference.cache
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\MainWindow.baml
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Alert\MyMessageBox.baml
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Database Pages\DatabaseQueries.baml
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\LoginView.baml
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Users Management Pages\UserCredentialsPage.baml
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Users Management Pages\UsersManagementPage.baml
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\App.baml
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\MainWindow.g.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Alert\MyMessageBox.g.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Alert\ToastWindow.g.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Dashboard\DashboadrQuery.g.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Dashboard\DashboardPage.g.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Database Pages\DatabaseConnections.g.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Database Pages\DatabaseLayerPages.g.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Database Pages\DatabaseQueries.g.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\ExportQueue\ExportQueuePage.g.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\ExportQueue\ExportQueueSettings.g.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\ExportQueue\QueueQuerySettings.g.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Express Senarios\EXTemp.g.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\IN Senarios\INTemp.g.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\LoadingScreen.g.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\LoginView.g.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Server Pages\PathParametersPage.g.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Server Pages\ServerPage.g.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Server Pages\ServerPathsPage.g.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Server Pages\ServerSettingsPage.g.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Users Management Pages\AllSetPage.g.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Users Management Pages\PersonalInformationPage.g.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Users Management Pages\ResetPasswordPage.g.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Users Management Pages\TeamsManagementPage.g.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Users Management Pages\UserCredentialsPage.g.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Users Management Pages\UserInformationPage.g.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Users Management Pages\UsersManagementPage.g.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\App.g.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\FirstLineTool_Content.g.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\FirstLineTool_MarkupCompile.cache
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\FirstLineTool_MarkupCompile.lref
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Alert\ToastWindow.baml
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Dashboard\DashboadrQuery.baml
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Dashboard\DashboardPage.baml
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Database Pages\DatabaseConnections.baml
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Database Pages\DatabaseLayerPages.baml
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\ExportQueue\ExportQueuePage.baml
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\ExportQueue\ExportQueueSettings.baml
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\ExportQueue\QueueQuerySettings.baml
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Express Senarios\EXTemp.baml
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\IN Senarios\INTemp.baml
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\LoadingScreen.baml
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Server Pages\PathParametersPage.baml
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Server Pages\ServerPage.baml
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Server Pages\ServerPathsPage.baml
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Server Pages\ServerSettingsPage.baml
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Users Management Pages\AllSetPage.baml
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Users Management Pages\PersonalInformationPage.baml
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Users Management Pages\ResetPasswordPage.baml
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Users Management Pages\TeamsManagementPage.baml
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\View\Users Management Pages\UserInformationPage.baml
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\FirstLineTool.g.resources
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\FirstLineTool.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\FirstLineTool.AssemblyInfoInputs.cache
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\FirstLineTool.AssemblyInfo.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\FirstLineTool.csproj.CoreCompileInputs.cache
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\FirstLineTool.csproj.CopyComplete
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\FirstLineTool.dll
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\refint\FirstLineTool.dll
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\FirstLineTool.pdb
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\FirstLineTool.genruntimeconfig.cache
+E:\Projects\FirstLineTool\FirstLineTool\obj\Debug\net8.0-windows\ref\FirstLineTool.dll
