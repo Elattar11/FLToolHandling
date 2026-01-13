@@ -19,6 +19,8 @@ namespace FirstLineTool.Helper
         public string DisplayMember { get; set; }
         public string ValueMember { get; set; }
         public string WhereColumn { get; set; }
+        public string ExtraWhere { get; set; }
+
         public DatabaseSqliteConnection Db { get; set; }
 
         public bool UseGlobal { get; set; } = false;

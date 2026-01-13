@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("auto%20assignment.wsdl")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/eandlogo.ico")]
 
 

@@ -10,11 +10,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Auto assignment.wsdl" />
     <None Remove="Images\eandlogo.png" />
     <None Remove="Resources\eandlogo.ico" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Auto assignment.wsdl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\eandlogo.ico" />
   </ItemGroup>
 

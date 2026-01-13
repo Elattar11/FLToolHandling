@@ -17,21 +17,7 @@ namespace FirstLineTool.Core.TypesAndPaths
                 "Database"
             );
 
-        //public static string GetPath(DatabaseType dbType)
-        //{
-        //    switch (dbType)
-        //    {
-        //        case DatabaseType.FirstLineHandlingTool:
-        //            //return Path.Combine(@"D:\Database", "FirstLineHandlingTool.db");
-        //            return Path.Combine(@"\\caisvfps02\sd$\IT\First Line Tool", "Database", "FirstLineHandlingTool.db");
-        //        //case DatabaseType.INToolUsagesDatabase:
-        //        //return Path.Combine(@"D:\Database", "INToolUsagesDatabase.db");
-        //        //return Path.Combine(@"\\caisvfps02\sd$\IT\IN First Line", "Database", "INToolUsagesDatabase.db");
-        //        default:
-        //            throw new ArgumentException("Unknown database type");
-        //
-        //    }
-        //}
+        
 
 
         // GLOBAL (على الشبكة)
@@ -42,6 +28,13 @@ namespace FirstLineTool.Core.TypesAndPaths
                 "Database",
                 "FirstLineHandlingTool.db"
             );
+
+
+            //return Path.Combine(
+            //    @"D:\Database",
+            //
+            //    "FirstLineHandlingTool.db"
+            //);
         }
 
         // LOCAL (على جهاز المستخدم)

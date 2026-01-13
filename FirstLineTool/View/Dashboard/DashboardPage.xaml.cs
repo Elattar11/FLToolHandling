@@ -40,9 +40,13 @@ namespace FirstLineTool.View.Dashboard
         HelperMethods _helper = new HelperMethods();
         private string _id;
         private string _role;
+        private bool _isInitialized = false;
+        private readonly DataGridFilterHelper _filterHelper;
+
         public DashboardPage(string id , string role)
         {
             InitializeComponent();
+            _filterHelper = new DataGridFilterHelper(ResultsDataGrid);
             _id = id;
             _role = role;
 
@@ -57,8 +61,47 @@ namespace FirstLineTool.View.Dashboard
             }
         }
 
+        //private void LoadFakeData()
+        //{
+        //    DataTable dt = new DataTable();
 
-        
+        //    // تعريف الأعمدة
+        //    dt.Columns.Add("Id");
+        //    dt.Columns.Add("desc");
+        //    dt.Columns.Add("SRNUM");
+        //    dt.Columns.Add("Notes");
+        //    dt.Columns.Add("Category");
+        //    dt.Columns.Add("CreatedDate");
+        //    dt.Columns.Add("Status");
+        //    dt.Columns.Add("Owner");
+
+        //    // إضافة بيانات تجريبية
+        //    for (int i = 1; i <= 20; i++) // 20 صف لاختبار scroll
+        //    {
+        //        dt.Rows.Add(
+        //            i,
+        //            "Item " + i,
+        //            "2-10101010 ",
+        //            "Notes for item " + i + ":\n- Line 1\n- Line 2\n- Line 3",
+        //            "Category " + ((i % 5) + 1),
+        //            DateTime.Now.AddDays(-i).ToShortDateString(),
+        //            (i % 2 == 0 ? "Active" : "Inactive"),
+        //            "Owner " + i
+        //        );
+        //    }
+
+        //    ResultsDataGrid.ItemsSource = dt.DefaultView;
+
+        //    // إضافة tooltip لكل خلية بحيث يظهر النص بالكامل
+        //    foreach (var column in ResultsDataGrid.Columns)
+        //    {
+        //        column.CellStyle = new Style(typeof(DataGridCell));
+        //        column.CellStyle.Setters.Add(new Setter(ToolTipService.ShowDurationProperty, 60000)); // تظهر لفترة طويلة
+        //        column.CellStyle.Setters.Add(new Setter(ToolTipService.ToolTipProperty,
+        //            new Binding(column.SortMemberPath))); // نص الخلية
+        //    }
+        //}
+
 
         private async Task<DataTable> LoadDashboardDataAsync()
         {
@@ -301,7 +344,7 @@ namespace FirstLineTool.View.Dashboard
                 DataTable dt = await LoadUsersSRsAsync();
 
                 // عرض البيانات في الـ DataGrid
-                ResultsDataGrid.ItemsSource = dt.DefaultView;
+                _filterHelper.LoadData(dt);
 
                 // تحديث عدد الصفوف في TextBlock
                 txtTotalQueue.Text = $"Total: {dt.Rows.Count}";
@@ -367,6 +410,27 @@ namespace FirstLineTool.View.Dashboard
             finally
             {
                 btnBackup.IsEnabled = true;
+            }
+        }
+
+        private void btnClearFilter_Loaded(object sender, RoutedEventArgs e)
+            => _filterHelper.ClearFilterButton_Loaded(sender, e);
+
+        private void btnClearFilter_Click(object sender, RoutedEventArgs e)
+            => _filterHelper.ClearFilterButton_Click(sender, e);
+
+        private void cbxFilter_Loaded(object sender, RoutedEventArgs e)
+            => _filterHelper.HeaderFilterComboBox_Loaded(sender, e);
+
+        private void cbxFilter_SelectionChanged(object sender, SelectionChangedEventArgs e)
+            => _filterHelper.HeaderFilterComboBox_SelectionChanged(sender, e);
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (!_isInitialized)
+            {
+
+                _isInitialized = true;
             }
         }
     }

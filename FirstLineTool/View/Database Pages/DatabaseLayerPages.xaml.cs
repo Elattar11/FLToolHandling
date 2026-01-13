@@ -37,6 +37,9 @@ namespace FirstLineTool.View.Layer_Pages
         DatabaseSqliteConnection db = new DatabaseSqliteConnection(DatabaseType.Local);
         DataTable dt = new DataTable();
 
+        private readonly DataGridFilterHelper _filterHelper;
+
+
 
         private string? authUsername;
         private string? authPassword;
@@ -49,6 +52,8 @@ namespace FirstLineTool.View.Layer_Pages
         public DatabaseLayerPages(string userId, string role)
         {
             InitializeComponent();
+            _filterHelper = new DataGridFilterHelper(ResultsDataGrid);
+
 
             _userId = userId;
             _role = role;
@@ -133,7 +138,9 @@ namespace FirstLineTool.View.Layer_Pages
         //}
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            
+            //LoadFakeData();
+
+
             if (!_isInitialized)
             {
                 LoadConnections();
@@ -451,8 +458,14 @@ namespace FirstLineTool.View.Layer_Pages
                     return result;
                 });
 
-                // عرض النتائج لو SELECT
-                ResultsDataGrid.ItemsSource = finalResult.Rows.Count > 0 ? finalResult.DefaultView : null;
+                if (finalResult.Rows.Count > 0)
+                {
+                    _filterHelper.LoadData(finalResult);
+                }
+                else
+                {
+                    _filterHelper.LoadData(null); // هيفضي الجريد
+                }
 
                 // 4️⃣ رسالة نجاح بعد الانتهاء
                 if (!sql.TrimStart().StartsWith("SELECT", StringComparison.OrdinalIgnoreCase))
@@ -618,6 +631,23 @@ namespace FirstLineTool.View.Layer_Pages
 
                 }
             }
+        }
+
+        private void HeaderFilterComboBox_Loaded(object sender, RoutedEventArgs e)
+            => _filterHelper.HeaderFilterComboBox_Loaded(sender, e);
+
+        private void HeaderFilterComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+            => _filterHelper.HeaderFilterComboBox_SelectionChanged(sender, e);
+
+        private void ClearFilterButton_Loaded(object sender, RoutedEventArgs e)
+            => _filterHelper.ClearFilterButton_Loaded(sender, e);
+
+        private void ClearFilterButton_Click(object sender, RoutedEventArgs e)
+            => _filterHelper.ClearFilterButton_Click(sender, e);
+
+        private void ResultsDataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            e.Column.Width = 120;
         }
     }
 }

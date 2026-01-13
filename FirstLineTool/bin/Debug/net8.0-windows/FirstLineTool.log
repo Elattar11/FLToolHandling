@@ -58,3 +58,387 @@
 2025-12-03 12:23:32.257 - Connection initialized: WAL enabled, busy_timeout=3000ms
 2025-12-03 12:34:03.932 - Connection initialized: WAL enabled, busy_timeout=3000ms
 2025-12-03 12:35:18.161 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-07 09:06:03.967 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-07 09:07:38.160 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-07 09:07:48.624 - ReadData Failed: SELECT * FROM Users WHERE Username = 'Mohamed.AMAAhmed' Exception: SqliteException - SQLite Error 14: 'unable to open database file'. | Stack:    at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteConnectionInternal..ctor(SqliteConnectionStringBuilder connectionOptions, SqliteConnectionPool pool)
+   at Microsoft.Data.Sqlite.SqliteConnectionPool.GetConnection()
+   at Microsoft.Data.Sqlite.SqliteConnectionFactory.GetConnection(SqliteConnection outerConnection)
+   at Microsoft.Data.Sqlite.SqliteConnection.Open()
+   at FirstLineTool.Core.DatabaseSqliteConnection.GetGlobalConn() in E:\Projects\FirstLineTool\FirstLineTool\Core\DatabaseSqliteConnection.cs:line 53
+   at FirstLineTool.Core.DatabaseSqliteConnection.ReadData(String statement, Boolean useGlobal, String msg) in E:\Projects\FirstLineTool\FirstLineTool\Core\DatabaseSqliteConnection.cs:line 120
+2025-12-07 09:10:28.564 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-07 09:10:40.429 - SQLite connection closed.
+2025-12-07 09:10:40.489 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-07 10:24:55.405 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-07 10:25:13.401 - SQLite connection closed.
+2025-12-07 10:25:13.427 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-07 10:25:17.671 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-07 10:29:00.858 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-07 10:29:31.078 - SQLite connection closed.
+2025-12-07 10:29:31.099 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-07 10:38:10.445 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-07 10:38:20.231 - SQLite connection closed.
+2025-12-07 10:38:20.254 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-07 10:39:17.216 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-07 10:39:32.304 - SQLite connection closed.
+2025-12-07 10:39:32.329 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-07 10:40:40.953 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-07 10:40:57.148 - SQLite connection closed.
+2025-12-07 10:40:57.177 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-07 10:40:59.961 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-07 10:43:05.728 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-07 10:43:14.724 - SQLite connection closed.
+2025-12-07 10:43:14.749 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-07 10:44:14.337 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-07 10:44:23.681 - SQLite connection closed.
+2025-12-07 10:44:23.705 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-07 10:45:44.033 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-07 10:45:54.052 - SQLite connection closed.
+2025-12-07 10:45:54.075 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-07 10:47:07.359 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-07 10:47:17.433 - SQLite connection closed.
+2025-12-07 10:47:17.459 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-07 10:55:41.938 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-07 10:55:52.646 - SQLite connection closed.
+2025-12-07 10:55:52.672 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-07 10:56:33.283 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-07 10:56:42.287 - SQLite connection closed.
+2025-12-07 10:56:42.312 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-07 10:58:43.829 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-07 10:59:02.384 - SQLite connection closed.
+2025-12-07 10:59:02.416 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-07 11:12:59.280 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-07 11:13:09.963 - SQLite connection closed.
+2025-12-07 11:13:09.987 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-07 12:44:50.224 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-07 12:45:01.520 - SQLite connection closed.
+2025-12-07 12:45:01.556 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-10 13:01:37.009 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 13:01:49.524 - SQLite connection closed.
+2025-12-10 13:01:49.558 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-10 13:01:52.891 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 15:40:49.930 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 15:41:10.077 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 15:41:20.194 - SQLite connection closed.
+2025-12-10 15:41:20.225 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-10 15:41:23.248 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 15:42:01.565 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 15:42:11.227 - SQLite connection closed.
+2025-12-10 15:42:11.251 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-10 15:42:14.292 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 15:44:00.991 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 15:44:12.006 - SQLite connection closed.
+2025-12-10 15:44:12.031 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-10 15:44:14.867 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 15:48:10.373 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 15:48:20.808 - SQLite connection closed.
+2025-12-10 15:48:20.835 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-10 15:48:23.672 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 15:51:06.862 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 15:51:17.839 - SQLite connection closed.
+2025-12-10 15:51:17.868 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-10 15:51:20.756 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 15:53:23.691 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 15:53:34.383 - SQLite connection closed.
+2025-12-10 15:53:34.408 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-10 15:53:37.532 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 15:58:05.155 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 15:58:14.371 - SQLite connection closed.
+2025-12-10 15:58:14.396 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-10 15:58:17.348 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 15:59:39.485 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 15:59:49.757 - SQLite connection closed.
+2025-12-10 15:59:49.787 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-10 15:59:52.515 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 16:01:08.176 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 16:01:17.415 - SQLite connection closed.
+2025-12-10 16:01:17.449 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-10 16:01:20.281 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 16:02:12.700 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 16:02:22.892 - SQLite connection closed.
+2025-12-10 16:02:22.918 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-10 16:02:25.682 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 16:03:22.706 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 16:03:32.531 - SQLite connection closed.
+2025-12-10 16:03:32.555 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-10 16:03:35.244 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 16:08:50.690 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 16:09:52.818 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 16:10:03.255 - SQLite connection closed.
+2025-12-10 16:10:03.281 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-10 16:10:06.630 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 16:19:59.072 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 16:20:08.064 - SQLite connection closed.
+2025-12-10 16:20:08.090 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-10 16:20:10.992 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 16:28:12.516 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 16:28:23.150 - SQLite connection closed.
+2025-12-10 16:28:23.180 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-10 16:28:26.917 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 16:29:22.551 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 16:29:33.004 - SQLite connection closed.
+2025-12-10 16:29:33.031 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-10 16:29:35.856 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 16:30:55.928 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 16:31:06.952 - SQLite connection closed.
+2025-12-10 16:31:06.980 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-10 16:31:09.515 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 16:36:14.699 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 16:36:25.511 - SQLite connection closed.
+2025-12-10 16:36:25.541 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-10 16:36:28.143 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 16:37:39.864 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 16:37:49.767 - SQLite connection closed.
+2025-12-10 16:37:49.793 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-10 16:37:52.598 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 16:38:50.054 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 16:39:00.456 - SQLite connection closed.
+2025-12-10 16:39:00.486 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-10 16:39:14.383 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 16:39:24.267 - SQLite connection closed.
+2025-12-10 16:39:24.305 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-10 16:39:29.062 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 16:40:08.673 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 16:40:17.989 - SQLite connection closed.
+2025-12-10 16:40:18.017 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-10 16:40:20.947 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-10 16:50:53.445 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 00:30:30.162 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 00:30:55.573 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 00:31:06.139 - SQLite connection closed.
+2025-12-11 00:31:06.220 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-11 00:31:10.134 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 00:35:40.244 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 00:35:51.170 - SQLite connection closed.
+2025-12-11 00:35:51.237 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-11 00:35:55.160 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 00:38:44.610 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 00:40:06.008 - SQLite connection closed.
+2025-12-11 00:40:06.060 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-11 00:40:09.350 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 00:46:49.017 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 00:47:00.578 - SQLite connection closed.
+2025-12-11 00:47:00.611 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-11 00:47:04.809 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 00:52:18.894 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 00:52:42.571 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 00:52:54.972 - SQLite connection closed.
+2025-12-11 00:52:55.044 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-11 00:52:58.543 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 00:56:18.219 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 00:56:30.668 - SQLite connection closed.
+2025-12-11 00:56:30.701 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-11 00:56:33.332 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 00:57:55.709 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 00:58:07.184 - SQLite connection closed.
+2025-12-11 00:58:07.219 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-11 00:58:10.245 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 01:00:40.371 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 01:00:56.669 - SQLite connection closed.
+2025-12-11 01:00:56.702 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-11 01:00:59.447 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 01:04:04.564 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 01:04:16.026 - SQLite connection closed.
+2025-12-11 01:04:16.060 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-11 01:04:19.302 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 01:07:19.350 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 01:07:31.175 - SQLite connection closed.
+2025-12-11 01:07:31.206 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-11 01:07:35.492 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 01:10:02.852 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 01:10:15.629 - SQLite connection closed.
+2025-12-11 01:10:15.661 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-11 01:11:32.370 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 01:11:43.251 - SQLite connection closed.
+2025-12-11 01:11:43.275 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-11 01:11:46.105 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 01:14:39.084 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 01:14:50.492 - SQLite connection closed.
+2025-12-11 01:14:50.526 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-11 01:14:53.651 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 01:16:06.472 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 01:16:18.226 - SQLite connection closed.
+2025-12-11 01:16:18.248 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-11 01:16:21.206 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 01:17:08.020 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 01:17:20.627 - SQLite connection closed.
+2025-12-11 01:17:20.691 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-11 01:17:24.286 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 01:19:03.984 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 01:19:14.461 - SQLite connection closed.
+2025-12-11 01:19:14.503 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-11 01:19:17.427 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 01:26:01.980 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 01:26:12.646 - SQLite connection closed.
+2025-12-11 01:26:12.678 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-11 01:26:15.315 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 01:26:42.836 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 01:27:19.466 - SQLite connection closed.
+2025-12-11 01:27:19.492 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-11 01:27:30.165 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 01:28:52.760 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 01:29:02.929 - SQLite connection closed.
+2025-12-11 01:29:02.955 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-11 01:29:05.695 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 01:35:55.272 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 01:36:10.139 - SQLite connection closed.
+2025-12-11 01:36:10.170 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-11 01:36:13.111 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 01:38:19.540 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 01:39:59.607 - SQLite connection closed.
+2025-12-11 01:39:59.633 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-11 01:40:03.492 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 01:47:58.303 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 01:48:09.444 - SQLite connection closed.
+2025-12-11 01:48:09.470 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-11 01:48:12.748 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 01:57:09.470 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 01:57:21.764 - SQLite connection closed.
+2025-12-11 01:57:21.791 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-11 01:57:25.378 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 02:23:59.092 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 02:24:11.073 - SQLite connection closed.
+2025-12-11 02:24:11.098 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-11 02:24:16.852 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 02:24:18.099 - All SQLite connections were closed.
+2025-12-11 02:24:18.101 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-11 02:24:18.102 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 02:24:18.102 - SQLite connection reinitialized successfully.
+2025-12-11 02:29:53.216 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-11 02:30:05.582 - SQLite connection closed.
+2025-12-11 02:30:05.612 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-11 02:30:08.957 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-14 10:33:26.285 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-14 10:34:03.327 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-14 10:34:13.909 - SQLite connection closed.
+2025-12-14 10:34:13.933 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-14 10:34:17.403 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-14 13:25:19.941 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-14 13:25:48.422 - SQLite connection closed.
+2025-12-14 13:25:48.463 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-14 13:25:57.632 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-16 21:05:45.802 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-18 17:44:32.279 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-18 17:44:55.065 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-18 17:45:07.255 - SQLite connection closed.
+2025-12-18 17:45:07.292 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-18 17:45:10.704 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-18 17:51:14.566 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-18 17:51:24.592 - SQLite connection closed.
+2025-12-18 17:51:24.618 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-18 17:51:27.344 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-18 17:52:03.684 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-18 17:52:13.249 - SQLite connection closed.
+2025-12-18 17:52:13.272 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-18 17:52:15.811 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-21 13:59:58.112 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-21 14:00:30.975 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-21 14:00:42.555 - SQLite connection closed.
+2025-12-21 14:00:42.581 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-21 14:01:17.544 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-21 14:49:28.450 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-21 14:49:56.866 - SQLite connection closed.
+2025-12-21 14:49:56.893 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-21 14:50:05.306 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-21 15:23:31.419 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-21 15:23:43.413 - SQLite connection closed.
+2025-12-21 15:23:43.439 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-21 15:23:47.462 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-22 11:20:10.783 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-22 11:20:49.475 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-22 11:21:00.590 - SQLite connection closed.
+2025-12-22 11:21:00.614 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-22 11:21:04.919 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-22 11:24:22.500 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-22 11:24:30.640 - SQLite connection closed.
+2025-12-22 11:24:30.665 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-22 11:24:35.011 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-23 12:42:09.364 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-23 12:42:19.239 - SQLite connection closed.
+2025-12-23 12:42:19.264 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-23 12:42:22.709 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-23 12:44:55.411 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-23 12:45:04.364 - SQLite connection closed.
+2025-12-23 12:45:04.400 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-23 12:45:08.042 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-23 13:00:38.879 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-23 13:02:12.779 - SQLite connection closed.
+2025-12-23 13:02:12.815 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-23 13:02:16.269 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-23 13:03:28.215 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-23 13:03:37.058 - SQLite connection closed.
+2025-12-23 13:03:37.110 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-23 13:03:41.209 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-23 13:11:52.465 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-23 13:12:01.157 - SQLite connection closed.
+2025-12-23 13:12:01.198 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-23 13:12:04.765 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-23 15:56:15.533 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-23 15:56:26.758 - SQLite connection closed.
+2025-12-23 15:56:26.781 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-23 15:57:26.743 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-23 19:27:45.665 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-23 19:28:06.879 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-23 19:28:18.011 - SQLite connection closed.
+2025-12-23 19:28:18.033 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-23 19:28:21.402 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-24 11:03:11.949 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-24 11:03:56.825 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-24 11:04:08.230 - SQLite connection closed.
+2025-12-24 11:04:08.251 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-24 11:04:13.261 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-24 11:07:27.451 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-24 11:07:38.563 - SQLite connection closed.
+2025-12-24 11:07:38.586 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-24 11:07:42.396 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-24 12:50:01.539 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-24 12:50:37.935 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-24 12:50:47.751 - SQLite connection closed.
+2025-12-24 12:50:47.774 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-24 12:50:51.248 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-24 13:05:16.240 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-24 13:05:26.248 - SQLite connection closed.
+2025-12-24 13:05:26.271 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-24 13:05:31.236 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-24 13:07:29.525 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-24 13:07:40.543 - SQLite connection closed.
+2025-12-24 13:07:40.571 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-24 13:07:44.892 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-24 13:12:27.700 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-24 13:12:37.729 - SQLite connection closed.
+2025-12-24 13:12:37.758 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-24 13:12:42.868 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-24 13:36:13.172 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-24 13:37:49.656 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-24 13:38:27.625 - SQLite connection closed.
+2025-12-24 13:38:27.649 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-24 13:38:32.023 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-24 13:46:03.796 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-24 13:46:15.093 - SQLite connection closed.
+2025-12-24 13:46:15.119 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-24 13:46:18.690 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-24 13:47:51.259 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-24 13:48:02.550 - SQLite connection closed.
+2025-12-24 13:48:02.573 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-24 13:48:05.846 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-28 14:40:59.489 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-28 14:41:10.308 - SQLite connection closed.
+2025-12-28 14:41:10.337 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-28 14:41:14.645 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-28 14:44:04.123 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-28 14:44:13.978 - SQLite connection closed.
+2025-12-28 14:44:14.005 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-28 14:44:17.148 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-28 15:07:45.926 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-28 15:07:54.923 - SQLite connection closed.
+2025-12-28 15:07:54.953 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-28 15:08:00.283 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-28 21:07:00.667 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2025-12-28 21:07:11.735 - SQLite connection closed.
+2025-12-28 21:07:11.763 - Local DB successfully backed up from Global using SQLite Backup API.
+2025-12-28 21:07:16.052 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2026-01-09 10:35:41.281 - Connection initialized: WAL enabled, busy_timeout=3000ms
+2026-01-09 10:35:51.067 - SQLite connection closed.
+2026-01-09 10:35:51.089 - Local DB successfully backed up from Global using SQLite Backup API.
+2026-01-09 10:35:54.660 - Connection initialized: WAL enabled, busy_timeout=3000ms

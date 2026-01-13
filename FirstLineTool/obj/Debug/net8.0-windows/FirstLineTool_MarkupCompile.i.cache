@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 E:\Projects\FirstLineTool\FirstLineTool\App.xaml
-261712705458
-1-1128990509
-44-944422188
+291783737078
+21526151858
+701356993220
 2231301826596
-MainWindow.xaml;View\Alert\MyMessageBox.xaml;View\Alert\ToastWindow.xaml;View\Dashboard\DashboadrQuery.xaml;View\Dashboard\DashboardPage.xaml;View\Database Pages\DatabaseConnections.xaml;View\Database Pages\DatabaseLayerPages.xaml;View\Database Pages\DatabaseQueries.xaml;View\ExportQueue\ExportQueuePage.xaml;View\ExportQueue\ExportQueueSettings.xaml;View\ExportQueue\QueueQuerySettings.xaml;View\Express Senarios\EXTemp.xaml;View\IN Senarios\INTemp.xaml;View\LoadingScreen.xaml;View\LoginView.xaml;View\Server Pages\PathParametersPage.xaml;View\Server Pages\ServerPage.xaml;View\Server Pages\ServerPathsPage.xaml;View\Server Pages\ServerSettingsPage.xaml;View\Users Management Pages\AllSetPage.xaml;View\Users Management Pages\PersonalInformationPage.xaml;View\Users Management Pages\ResetPasswordPage.xaml;View\Users Management Pages\TeamsManagementPage.xaml;View\Users Management Pages\UserCredentialsPage.xaml;View\Users Management Pages\UserInformationPage.xaml;View\Users Management Pages\UsersManagementPage.xaml;
+MainWindow.xaml;View\Alert\MyMessageBox.xaml;View\Alert\ToastWindow.xaml;View\Dashboard\DashboadrQuery.xaml;View\Dashboard\DashboardPage.xaml;View\Database Pages\DatabaseConnections.xaml;View\Database Pages\DatabaseLayerPages.xaml;View\Database Pages\DatabaseQueries.xaml;View\ExportQueue\ExportQueuePage.xaml;View\ExportQueue\ExportQueueSettings.xaml;View\ExportQueue\QueueQuerySettings.xaml;View\ExportQueue\RepeatedComplaintsWindow.xaml;View\Express Senarios\ExpressTabsPage.xaml;View\Express Senarios\EXTemp.xaml;View\Express Senarios\HealthCheckPage.xaml;View\IN Senarios\INTemp.xaml;View\LoadingScreen.xaml;View\LoginView.xaml;View\Server Pages\PathParametersPage.xaml;View\Server Pages\ServerPage.xaml;View\Server Pages\ServerPathsPage.xaml;View\Server Pages\ServerSettingsPage.xaml;View\Users Management Pages\AllSetPage.xaml;View\Users Management Pages\PersonalInformationPage.xaml;View\Users Management Pages\ResetPasswordPage.xaml;View\Users Management Pages\TeamsManagementPage.xaml;View\Users Management Pages\UserCredentialsPage.xaml;View\Users Management Pages\UserInformationPage.xaml;View\Users Management Pages\UsersManagementPage.xaml;
 
 False
 

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="FirstLineTool.exe" version="1.0.0.46" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="FirstLineTool.exe" version="1.0.0.102" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="Resources\eandlogo.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -61,6 +61,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>kp6hUK1Ft8fdVCdGH77ETUO2fAgIH1m0K2q/Vw/q4nE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Auto assignment.wsdl" size="47723">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>bhzwg+sjvHVaiOE8xIFvRyuQPXAOefUCBWgG+IFw2Ww=</dsig:DigestValue>
     </hash>
   </file>
   <file name="ClosedXML.dll" size="1691136">
@@ -648,13 +657,13 @@
       <dsig:DigestValue>bR/1GtMMNBMlXLQjdsBvHfKX95AABfWlgpoUXK0AS5c=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="FirstLineTool.dll" size="392704">
+  <file name="FirstLineTool.dll" size="503296">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>zKw+eMC3W3kHWuCze+ZVoECc7A+pIIgCfCTJV0tabco=</dsig:DigestValue>
+      <dsig:DigestValue>jK9Eu6i+tRMtT2f41gdFSJzco8sRE7H21Oqx3M4EXYQ=</dsig:DigestValue>
     </hash>
   </file>
   <file name="FirstLineTool.exe" size="250368">
@@ -663,7 +672,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Ok1xG2bGpZgx2UJJ34e+msOgouJTS//qfXKbl8tL02g=</dsig:DigestValue>
+      <dsig:DigestValue>7igk8KNnKcHcvJHiMk/pmzo45JupqZi2Epp7L+Q+Q2g=</dsig:DigestValue>
     </hash>
   </file>
   <file name="FirstLineTool.runtimeconfig.json" size="466">

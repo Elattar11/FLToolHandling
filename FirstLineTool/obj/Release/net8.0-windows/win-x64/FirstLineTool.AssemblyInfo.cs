@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FirstLineTool")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ce94581ac7b1bacac53a01cfa941fbd184cec9a")]
 [assembly: System.Reflection.AssemblyProductAttribute("FirstLineTool")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FirstLineTool")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

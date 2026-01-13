@@ -4,74 +4,82 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FirstLineTool.View.Server_Pages"
-        mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        mc:Ignorable="d"
         FontFamily="{DynamicResource MaterialDesignFont}"
         WindowStartupLocation="CenterScreen"
         Loaded="Window_Loaded"
         WindowStyle="None"
-        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
         AllowsTransparency="True"
         Background="Transparent"
-        Title="DatabaseQueries" Height="247" Width="800">
-    <Border Background="White" CornerRadius="10" 
-                BorderBrush="#bf072f"
-                BorderThickness="1"
-                MouseDown="Border_MouseDown">
+        Title="ServerSettingsPage"
+        Height="260" Width="800">
 
-        <Grid>
-            <!-- زرارين فوق على اليمين -->
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 10 10 0">
+    <Border Background="#FAFAFA"
+            CornerRadius="10" 
+            BorderBrush="#bf072f"
+            BorderThickness="1"
+            MouseDown="Border_MouseDown">
 
-                
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <!-- Header -->
+                <RowDefinition Height="*"/>
+                <!-- Content -->
+            </Grid.RowDefinitions>
 
-                <!-- Close -->
-                <Button Name="btnClose" Style="{StaticResource topButton}" Click="btnClose_Click">
-                    <Icon:PackIconMaterial Kind="Close" Width="12" Height="12"/>
-                </Button>
+            <!-- ========== HEADER ========== -->
+            <Grid Grid.Row="0" Margin="10,10,10,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
 
-            </StackPanel>
+                <!-- عنوان النافذة -->
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Center"
+                            Grid.Column="0"
+                            Margin="10,0,0,0">
+                    <Icon:PackIconMaterial Kind="Server"
+                                           Width="20" Height="20"
+                                           Foreground="#bf072f"
+                                           Margin="0,0,8,0"/>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="Server Settings"
+                                   FontSize="18"
+                                   FontWeight="Bold"
+                                   Foreground="#333"/>
+                        <TextBlock Text="Configure server IP address and port"
+                                   FontSize="11"
+                                   Foreground="#777"/>
+                    </StackPanel>
+                </StackPanel>
 
-            <!-- محتوى الفورم -->
-            <StackPanel Margin="40 60 40 40" VerticalAlignment="Top">
+                <!-- زر Close -->
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Grid.Column="1"
+                            Margin="0,0,5,0">
 
-                <GroupBox Header="Server Settings"
-          HorizontalAlignment="Stretch"
-          BorderBrush="Gray"
-          BorderThickness="1"
-          Background="White"
-          Padding="10"
-          SnapsToDevicePixels="True">
+                    <Button x:Name="btnClose"
+                            Style="{StaticResource topButton}"
+                            Click="btnClose_Click">
+                        <Icon:PackIconMaterial Kind="Close" Width="14" Height="14"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
 
-                    <GroupBox.Resources>
-                        <Style TargetType="GroupBox">
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="GroupBox">
-                                        <Grid>
-                                            <Border BorderBrush="Gray" BorderThickness="1" CornerRadius="3" Background="White" />
-                                            <DockPanel Margin="10,7,10,10">
-                                                <Label DockPanel.Dock="Top"
-                                       Content="{TemplateBinding Header}"
-                                       Background="White"
-                                       Foreground="Black"
-                                       FontWeight="Bold"
-                                       Margin="10,-17,0,5"/>
-                                                <ContentPresenter Margin="0,5,0,0"/>
-                                            </DockPanel>
-                                        </Grid>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-                    </GroupBox.Resources>
-
-                    <!-- Start Content -->
-                    <Grid Margin="0 10" Height="92">
+            <!-- ========== CONTENT ========== -->
+            <Grid Grid.Row="1" Margin="20,10,20,20">
+                <materialDesign:Card Padding="15"
+                                     materialDesign:ShadowAssist.ShadowDepth="Depth2">
+                    <Grid Margin="0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="50"/>
-                            <!-- مكان الزرار -->
+                            <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
                         <Grid.ColumnDefinitions>
@@ -87,7 +95,8 @@
                             materialDesign:HintAssist.Hint="Server IP Address" 
                             BorderBrush="Black" 
                             BorderThickness="0 0 0 1.5"
-                            Grid.Column="0" Grid.Row="0"/>
+                            Grid.Column="0" Grid.Row="0"
+                            Margin="0,0,0,0"/>
 
                         <TextBox 
                             x:Name="txtPort" 
@@ -95,27 +104,27 @@
                             materialDesign:HintAssist.Hint="Server Port" 
                             BorderBrush="Black" 
                             BorderThickness="0 0 0 1.5"
-                            Grid.Column="2" Grid.Row="0"/>
+                            Grid.Column="2" Grid.Row="0"
+                            Margin="0,0,0,0"/>
 
-                        <!-- زرار Update في النص -->
+                        <!-- زرار Update في النص تحت -->
                         <Button x:Name="btnUpdate"
-                            Content="Update"
-                            Width="120" Height="35"
-                            Background="#076ebf"   
-                            BorderBrush="Transparent"
-                            Foreground="White"
-                            HorizontalAlignment="Center"
-                            Grid.Row="1"
-                            Grid.ColumnSpan="3"
-                            Margin="0,15,0,0"
-                            Click="btnUpdate_Click"/>
+                                Content="Update"
+                                Width="140" Height="35"
+                                Background="#076ebf"   
+                                BorderBrush="Transparent"
+                                Foreground="White"
+                                HorizontalAlignment="Center"
+                                Grid.Row="1"
+                                Grid.ColumnSpan="3"
+                                Margin="0,18,0,0"
+                                Click="btnUpdate_Click"
+                                materialDesign:ButtonAssist.CornerRadius="18"
+                                Style="{StaticResource MaterialDesignRaisedButton}"/>
                     </Grid>
+                </materialDesign:Card>
+            </Grid>
 
-                </GroupBox>
-
-
-
-            </StackPanel>
         </Grid>
     </Border>
 </Window>

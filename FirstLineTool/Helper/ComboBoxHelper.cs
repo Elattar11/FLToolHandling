@@ -17,6 +17,11 @@ namespace FirstLineTool.Helper
 
             string query;
 
+            // ✅ تجهيز فلتر إضافي ثابت
+            string extraWhere = string.IsNullOrWhiteSpace(options.ExtraWhere)
+                ? ""
+                : options.ExtraWhere.Trim();
+
             if (options.ConditionComboBox != null && !string.IsNullOrEmpty(options.WhereColumn))
             {
                 if (options.ConditionComboBox.SelectedValue != null &&
@@ -25,30 +30,27 @@ namespace FirstLineTool.Helper
                     query = $"SELECT {options.ValueMember}, {options.DisplayMember} " +
                             $"FROM {options.TableName} " +
                             $"WHERE {options.WhereColumn} = {conditionValue}";
+
+                    // ✅ لو فيه ExtraWhere ضيفه AND
+                    if (!string.IsNullOrWhiteSpace(extraWhere))
+                        query += $" AND ({extraWhere})";
                 }
                 else
                 {
-                    // لو الشرط مش متحقق نفرغ الكومبو الهدف
                     options.TargetComboBox.ItemsSource = null;
                     return;
                 }
             }
             else
             {
-                // من غير شرط
                 query = $"SELECT {options.ValueMember}, {options.DisplayMember} FROM {options.TableName}";
+
+                // ✅ لو فيه ExtraWhere ضيف WHERE
+                if (!string.IsNullOrWhiteSpace(extraWhere))
+                    query += $" WHERE ({extraWhere})";
             }
 
-            DataTable dt;
-            if (options.UseGlobal)
-            {
-                dt = options.Db.ReadData(query, useGlobal: true, "");
-            }
-            else
-            {
-                dt = options.Db.ReadData(query, useGlobal: false, "");
-            }
-            
+            DataTable dt = options.Db.ReadData(query, useGlobal: options.UseGlobal, "");
 
             var items = dt.AsEnumerable()
                 .Select(row => new
@@ -62,6 +64,7 @@ namespace FirstLineTool.Helper
             options.TargetComboBox.DisplayMemberPath = "Display";
             options.TargetComboBox.SelectedValuePath = "Value";
         }
+
 
     }
 }

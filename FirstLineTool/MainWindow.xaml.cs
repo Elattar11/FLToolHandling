@@ -1,6 +1,8 @@
-﻿using FirstLineTool.View;
+﻿using FirstLineTool.Helper.NotificationCenter;
+using FirstLineTool.View;
 using FirstLineTool.View.Alert;
 using FirstLineTool.View.Dashboard;
+using FirstLineTool.View.Database_Pages;
 using FirstLineTool.View.ExportQueue;
 using FirstLineTool.View.Express_Senarios;
 using FirstLineTool.View.IN_Senarios;
@@ -40,10 +42,15 @@ namespace FirstLineTool
         private UserCredentialsPage _userCredentialsPage;
         private UserInformationPage _userInformationPage;
         private ExportQueuePage _exportQueuePage;
+        private DashboardPage _dashboardPage;
+        private ExpressTabsPage _expressTabsPage;
         #endregion
         public MainWindow(string id, string firstname, string lastname, string title, string role)
         {
             InitializeComponent();
+
+            
+            
 
             _firstname = firstname;
             _lastname = lastname;
@@ -67,6 +74,9 @@ namespace FirstLineTool
             txtTitle.Text = $"{_title}";
             _role = role;
         }
+
+        
+        
 
         public void UpdateUserInfo(string firstname, string lastname, string title)
         {
@@ -280,14 +290,24 @@ namespace FirstLineTool
         {
             
 
-            MainFrame.Navigate(new DashboardPage(_id , _role));
+
+            if (_dashboardPage == null)
+                _dashboardPage = new DashboardPage(_id, _role);
+
+            MainFrame.Navigate(_dashboardPage);
             ResetMenuButtons();
             btnDashboard.Tag = "Active";
         }
 
         private void btnExpress_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new EXTemp());
+            
+
+
+            if (_expressTabsPage == null)
+                _expressTabsPage = new ExpressTabsPage(_id, _role);
+
+            MainFrame.Navigate(_expressTabsPage);
             ResetMenuButtons();
             btnExpress.Tag = "Active";
         }
@@ -336,5 +356,9 @@ namespace FirstLineTool
         {
             this.MaxHeight = SystemParameters.WorkArea.Height;
         }
+
+        
+
+        
     }
 }

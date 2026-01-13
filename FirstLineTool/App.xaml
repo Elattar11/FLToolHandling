@@ -5,12 +5,15 @@
              xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
              StartupUri="View/LoginView.xaml">
     <Application.Resources>
-        
-        
+
+
 
         
-        
+
         <ResourceDictionary>
+
+            
+            
             <ResourceDictionary.MergedDictionaries>
                 
 
@@ -20,6 +23,7 @@
                 
                 <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="Red" SecondaryColor="DeepOrange"/>
 
+                
 
             </ResourceDictionary.MergedDictionaries>
             

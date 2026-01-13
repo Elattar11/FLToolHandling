@@ -4,66 +4,154 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FirstLineTool.View.ExportQueue"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
       mc:Ignorable="d" 
       Loaded="Page_Loaded"
-      
+      Unloaded="Page_Unloaded"
       FontFamily="{DynamicResource MaterialDesignFont}"
-      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ExportQueuePage">
 
-    <Grid Background="White">
+    <Grid Background="#FAFAFA">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <!-- Total TextBlock -->
+            <!-- Header -->
             <RowDefinition Height="Auto"/>
-            <!-- ComboBoxes + Old Buttons -->
+            <!-- Queue card -->
             <RowDefinition Height="Auto"/>
-            <!-- New ComboBox + New Button -->
+            <!-- Assign card -->
             <RowDefinition Height="*"/>
             <!-- DataGrid -->
         </Grid.RowDefinitions>
 
-        <!-- Row 0: Total Queue TextBlock -->
-        <TextBlock x:Name="txtTotalQueue"
-                   Grid.Row="0"
-                   FontWeight="Bold"
-                   FontSize="16"
-                   Foreground="Black"
-                   HorizontalAlignment="Center"
-                   Margin="0,20,0,20"
-                   Text="Total Queue: 0"/>
-
-        <!-- Row 1: ComboBoxes القديمة + الأزرار -->
-        <Grid Grid.Row="1" Margin="20,0,20,10">
+        <!-- ROW 0: HEADER -->
+        <Grid Grid.Row="0" Margin="20,10,20,10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <!-- Title + Total -->
+            <StackPanel Orientation="Vertical" Grid.Column="0">
+                <TextBlock Text="Export Queue"
+               FontSize="20"
+               FontWeight="Bold"
+               Foreground="#333"/>
+
+                <!-- صف العدادات -->
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                    <TextBlock x:Name="txtTotalQueue"
+                        Text="Total Queue: 0"
+                        FontSize="14"
+                        Foreground="Black"
+                        ToolTip="Total rows after current filters"/>
+
+                    <TextBlock x:Name="txtUnAssigned"
+                        Text="Un-Assigned: 0"
+                        Margin="20 0 0 0"
+                        FontSize="14"
+                        Foreground="Gray"
+                        ToolTip="Total rows after current filters"/>
+
+                    <TextBlock x:Name="txtTotalRepeated7Days"
+                        Text="Repeated last 7 days: calculating..."
+                        FontSize="14"
+                        Margin="20,0,0,0"
+                        Foreground="#AD1457"
+                        FontWeight="Bold"
+                        ToolTip="Rows where 'Repeated Last 7 days' = Yes (after filters)"/>
+                    <TextBlock x:Name="txtTotalDuplicated"
+                        Text="Duplicated: 0"
+                        FontSize="14"
+                        Margin="20,0,0,0"
+                        Foreground="#EF6C00"
+                        FontWeight="Bold"
+                        ToolTip="Rows where 'Duplicated' = Yes (after filters)"/>
+                    <TextBlock x:Name="txtSlaWarning"
+                        Text="SLA Warning: 0"
+                        FontSize="14"
+                        Margin="20,0,0,0"
+                        Foreground="#1E88E5"
+                        FontWeight="Bold"
+                        ToolTip="Rows with SLA Status = WARNING (after filters)"/>
+
+                    <TextBlock x:Name="txtSlaCritical"
+                        Text="SLA Critical: 0"
+                        FontSize="14"
+                        Margin="20,0,0,0"
+                        Foreground="#FB8C00"
+                        FontWeight="Bold"
+                        ToolTip="Rows with SLA Status = CRITICAL (after filters)"/>
+
+                    <TextBlock x:Name="txtSlaOverdue"
+                        Text="SLA Overdue: 0"
+                        FontSize="14"
+                        Margin="20,0,0,0"
+                        Foreground="#E53935"
+                        FontWeight="Bold"
+                        ToolTip="Rows with SLA Status = OVERDUE (after filters)"/>
+                </StackPanel>
+            </StackPanel>
+
+            <!-- Top buttons: Settings / Queries / Refresh -->
+            <StackPanel Grid.Column="1"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        >
+                <Button Name="btnSettings" Style="{StaticResource topButton}" Click="btnSettings_Click">
+                    <materialDesign:PackIcon Kind="Queue" Width="18" Height="18"/>
+                </Button>
+                <Button Name="btnQueries" Style="{StaticResource topButton}" Click="btnQueries_Click">
+                    <materialDesign:PackIcon Kind="SqlQuery" Width="18" Height="18"/>
+                </Button>
+                <Button Name="btnRefresh" Style="{StaticResource topButton}" Click="btnRefresh_Click">
+                    <materialDesign:PackIcon Kind="Refresh" Width="18" Height="18"/>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <!-- ROW 1: QUEUE & QUERY + RUN/EXPORT -->
+        <materialDesign:Card Grid.Row="1" Margin="20,0,20,10" Padding="15">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Connection -->
                 <ComboBox x:Name="cbxConnections"
-                          Width="200"
-                          Margin="10,0,0,0"
-                          SelectionChanged="cbxConnections_SelectionChanged"
+                          Grid.Column="0"
+                          Margin="0,0,10,0"
+                          Width="Auto"
                           IsEditable="True"
                           IsTextSearchEnabled="False"
                           StaysOpenOnEdit="True"
                           TextSearch.TextPath="Display"
                           Style="{StaticResource MaterialDesignOutlinedComboBox}"
-                          materialDesign:HintAssist.Hint="Select Queue"/>
+                          materialDesign:HintAssist.Hint="Select Queue"
+                          SelectionChanged="cbxConnections_SelectionChanged"/>
+
+                <!-- Query -->
                 <ComboBox x:Name="cbxQueueQueries"
-                          Width="200"
-                          Margin="10,0,0,0"
+                          Grid.Column="1"
+                          Margin="0,0,10,0"
+                          Width="Auto"
                           IsEditable="True"
                           IsTextSearchEnabled="False"
                           StaysOpenOnEdit="True"
                           TextSearch.TextPath="Display"
                           Style="{StaticResource MaterialDesignOutlinedComboBox}"
                           materialDesign:HintAssist.Hint="Select Query"/>
+
+                <!-- Run Queue -->
                 <Button Content="Run Queue"
                         x:Name="btnExport"
-                        Margin="10,0,0,0"
+                        Grid.Column="2"
+                        Margin="0,0,10,0"
                         Click="btnExport_ClickAsync"
                         Foreground="White"
                         Background="#b9052f"
@@ -71,10 +159,12 @@
                         materialDesign:ButtonAssist.CornerRadius="24"
                         Style="{StaticResource MaterialDesignRaisedButton}"
                         Width="150"
-                        Height="50"/>
+                        Height="40"/>
+
+                <!-- Export to Excel -->
                 <Button Content="Export To Excel"
                         x:Name="btnExportToExcel"
-                        Margin="10,0,0,0"
+                        Grid.Column="3"
                         Click="btnExportToExcel_Click"
                         Foreground="White"
                         Background="#0f8a0f"
@@ -82,80 +172,103 @@
                         materialDesign:ButtonAssist.CornerRadius="24"
                         Style="{StaticResource MaterialDesignRaisedButton}"
                         Width="150"
-                        Height="50"/>
-            </StackPanel>
+                        Height="40"/>
+            </Grid>
+        </materialDesign:Card>
 
-            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
-                <Button Name="btnSettings" Style="{StaticResource topButton}" Click="btnSettings_Click">
-                    <materialDesign:PackIcon Kind="Queue" Width="18" Height="18"/>
-                </Button>
-                <Button Name="btnQueries" Style="{StaticResource topButton}" Click="btnQueries_Click">
-                    <materialDesign:PackIcon Kind="SqlQuery" Width="18" Height="18"/>
-                </Button>
+        <!-- ROW 2: ASSIGN / UNASSIGN CARD -->
+        <materialDesign:Card Grid.Row="2" Name="assignedCard" Margin="20,0,20,10" Padding="15">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
 
-                <Button Name="btnRefresh" Style="{StaticResource topButton}" Click="btnRefresh_Click">
-                    <materialDesign:PackIcon Kind="Refresh" Width="18" Height="18"/>
-                </Button>
-            </StackPanel>
-        </Grid>
+                <!-- User -->
+                <ComboBox x:Name="cbxUsers"
+                          Grid.Column="0"
+                          Margin="0,0,10,0"
+                          IsEditable="True"
+                          Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                          materialDesign:HintAssist.Hint="Select User"/>
 
-        <!-- Row 2: ComboBox جديد + زرار جديد -->
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,20,10">
-            <ComboBox x:Name="cbxUsers" Width="200" Margin="10,0,10,0"
-                      IsEditable="True"
-                      
-                      Style="{StaticResource MaterialDesignOutlinedComboBox}"
-                      materialDesign:HintAssist.Hint="Select User"/>
-            <Button x:Name="btnAssignTo" Content="Assign SRs" Width="150" Height="50"
-                    Click="btnAssignTo_Click"
-                    Background="#0055aa" Foreground="White" BorderBrush="Transparent"
-                    materialDesign:ButtonAssist.CornerRadius="24"/>
-        </StackPanel>
+                <!-- Assign -->
+                <Button x:Name="btnAssignTo" Content="Assign SRs"
+                        Grid.Column="1"
+                        Margin="0,0,10,0"
+                        Width="150" Height="40"
+                        Click="btnAssignTo_ClickAsync"
+                        Background="#0055aa"
+                        Foreground="White"
+                        BorderBrush="Transparent"
+                        materialDesign:ButtonAssist.CornerRadius="24"/>
 
-        <!-- Row 3: DataGrid -->
+                <!-- UnAssign -->
+                <Button x:Name="btnUnAssign" Content="Un Assign SRs"
+                        Grid.Column="2"
+                        Width="150" Height="40"
+                        Click="btnUnAssign_Click"
+                        Background="#d84315"
+                        Foreground="White"
+                        BorderBrush="Transparent"
+                        materialDesign:ButtonAssist.CornerRadius="24"/>
+            </Grid>
+        </materialDesign:Card>
+
         <DataGrid x:Name="ResultsDataGrid"
-                  Grid.Row="3"
-                  RowHeight="24"
-                  Margin="20,0,20,20"
-                  AutoGenerateColumns="True"
-                  CanUserAddRows="False"
-                  CanUserDeleteRows="False"
-                  CanUserResizeColumns="True"
-                  IsReadOnly="True"
-                  HeadersVisibility="Column"
-                  SelectionUnit="Cell"
-                  SelectionMode="Extended"
-                  GridLinesVisibility="All"
-                  BorderBrush="#d0d0d0"
-                  BorderThickness="1"
-                  HorizontalGridLinesBrush="#e0e0e0"
-                  VerticalGridLinesBrush="#e0e0e0"
-                  AutoGeneratingColumn="ResultsDataGrid_AutoGeneratingColumn">
+          Grid.Row="3"
+          RowHeight="24"
+          Margin="20,0,20,20"
+          AutoGenerateColumns="True"
+          CanUserAddRows="False"
+          CanUserDeleteRows="False"
+          CanUserResizeColumns="True"
+          IsReadOnly="True"
+          HeadersVisibility="Column"
+          SelectionUnit="Cell"
+          SelectionMode="Extended"
+          GridLinesVisibility="All"
+          BorderBrush="#d0d0d0"
+          BorderThickness="1"
+          HorizontalGridLinesBrush="#e0e0e0"
+          VerticalGridLinesBrush="#e0e0e0"
+          AutoGeneratingColumn="ResultsDataGrid_AutoGeneratingColumn">
 
+            <!-- ✅ CellStyle زي ما هو -->
             <DataGrid.CellStyle>
                 <Style TargetType="DataGridCell">
                     <Setter Property="Padding" Value="6"/>
                     <Setter Property="BorderThickness" Value="0.5"/>
                     <Setter Property="BorderBrush" Value="#d0d0d0"/>
-                    <Setter Property="Background" Value="White"/>
-                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="Background"
+                        Value="{Binding RelativeSource={RelativeSource AncestorType=DataGridRow}, Path=Background}"/>
+                    <Setter Property="Foreground"
+                        Value="{Binding RelativeSource={RelativeSource AncestorType=DataGridRow}, Path=Foreground}"/>
                     <Setter Property="SnapsToDevicePixels" Value="True"/>
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="DataGridCell">
                                 <Border x:Name="CellBorder"
-                                        Background="{TemplateBinding Background}"
-                                        BorderBrush="{TemplateBinding BorderBrush}"
-                                        BorderThickness="{TemplateBinding BorderThickness}">
-                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
                                 </Border>
                                 <ControlTemplate.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter TargetName="CellBorder" Property="Background" Value="#eaf3ff"/>
+                                        <Setter TargetName="CellBorder"
+                                        Property="Background"
+                                        Value="#eaf3ff"/>
                                     </Trigger>
                                     <Trigger Property="IsSelected" Value="True">
-                                        <Setter TargetName="CellBorder" Property="Background" Value="Black"/>
-                                        <Setter TargetName="CellBorder" Property="BorderBrush" Value="#333333"/>
+                                        <Setter TargetName="CellBorder"
+                                        Property="Background"
+                                        Value="Black"/>
+                                        <Setter TargetName="CellBorder"
+                                        Property="BorderBrush"
+                                        Value="#333333"/>
                                         <Setter Property="Foreground" Value="White"/>
                                     </Trigger>
                                 </ControlTemplate.Triggers>
@@ -165,21 +278,109 @@
                 </Style>
             </DataGrid.CellStyle>
 
+            <!-- ✅ ColumnHeaderStyle زي ما هو -->
             <DataGrid.ColumnHeaderStyle>
                 <Style TargetType="DataGridColumnHeader">
                     <Setter Property="Background" Value="#bf072f"/>
                     <Setter Property="Foreground" Value="White"/>
                     <Setter Property="FontWeight" Value="Bold"/>
                     <Setter Property="FontSize" Value="14"/>
-                    <Setter Property="Height" Value="35"/>
+                    <Setter Property="Height" Value="60"/>
                     <Setter Property="HorizontalContentAlignment" Value="Center"/>
                     <Setter Property="VerticalContentAlignment" Value="Center"/>
                     <Setter Property="BorderBrush" Value="White"/>
                     <Setter Property="BorderThickness" Value="0,0,1,0"/>
+
+                    <Setter Property="ContentTemplate">
+                        <Setter.Value>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- اسم العمود -->
+                                    <TextBlock Grid.Row="0"
+                                       Grid.Column="0"
+                                       Grid.ColumnSpan="2"
+                                       Text="{Binding}"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+
+                                    <!-- ComboBox للفلاتر -->
+                                    <ComboBox Grid.Row="1"
+                                      Grid.Column="0"
+                                      Margin="0,1,0,0"
+                                      FontSize="11"
+                                      MinWidth="70"
+                                      Height="28"
+                                      Loaded="ComboBox_Loaded"
+                                      SelectionChanged="ComboBox_SelectionChanged"
+                                      Tag="{Binding RelativeSource={RelativeSource AncestorType=DataGridColumnHeader},
+                                                    Path=Column.SortMemberPath}"/>
+
+                                    <!-- زرار مسح الفلتر -->
+                                    <Button Grid.Row="1"
+                                    Grid.Column="1"
+                                    Margin="2,1,0,0"
+                                    Width="16"
+                                    Height="16"
+                                    Padding="0"
+                                    Content="✕"
+                                    FontSize="10"
+                                    ToolTip="Clear filter"
+                                    Visibility="Collapsed"
+                                    Loaded="btnClearFilter_Loaded"
+                                    Click="btnClearFilter_Click"
+                                    Tag="{Binding RelativeSource={RelativeSource AncestorType=DataGridColumnHeader},
+                                                  Path=Column.SortMemberPath}"/>
+                                </Grid>
+                            </DataTemplate>
+                        </Setter.Value>
+                    </Setter>
                 </Style>
             </DataGrid.ColumnHeaderStyle>
 
+            <!-- ✅ هنا الجديد: الـ Double-Click على مستوى الـ Row -->
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick"/>
+
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding [SLA Status]}" Value="CRITICAL">
+                            <Setter Property="Background" Value="#FFF3CD"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                        </DataTrigger>
+
+                        <DataTrigger Binding="{Binding [SLA Status]}" Value="WARNING">
+                            <Setter Property="Background" Value="#E7F3FE"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                        </DataTrigger>
+
+                        <DataTrigger Binding="{Binding [SLA Status]}" Value="OVERDUE">
+                            <Setter Property="Background" Value="#F8D7DA"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
+
         </DataGrid>
+
+
+
+
+        <materialDesign:Snackbar x:Name="SlaSnackbar"
+                         Grid.RowSpan="4"
+                         HorizontalAlignment="Right"
+                         VerticalAlignment="Bottom"
+                         Margin="20"/>
+        
 
         <!-- Overlay Loader -->
         <Grid x:Name="OverlayLoader"
@@ -192,6 +393,4 @@
         </Grid>
 
     </Grid>
-
-
 </Page>

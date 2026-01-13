@@ -39,7 +39,16 @@
     <Compile Update="View\ExportQueue\QueueQuerySettings.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\ExportQueue\RepeatedComplaintsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Express Senarios\ExpressTabsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\Express Senarios\EXTemp.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Express Senarios\HealthCheckPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\IN Senarios\INTemp.xaml.cs">
@@ -119,7 +128,16 @@
     <Page Update="View\ExportQueue\QueueQuerySettings.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\ExportQueue\RepeatedComplaintsWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Express Senarios\ExpressTabsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\Express Senarios\EXTemp.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Express Senarios\HealthCheckPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\IN Senarios\INTemp.xaml">

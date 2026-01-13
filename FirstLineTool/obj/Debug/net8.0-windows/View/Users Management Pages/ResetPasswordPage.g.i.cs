@@ -88,8 +88,7 @@ namespace FirstLineTool.View.Users_Management_Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FirstLineTool;V1.0.0.0;component/view/users%20management%20pages/resetpasswordpa" +
-                    "ge.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FirstLineTool;component/view/users%20management%20pages/resetpasswordpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\View\Users Management Pages\ResetPasswordPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

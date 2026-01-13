@@ -4,294 +4,311 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FirstLineTool.View.Layer_Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
       mc:Ignorable="d" 
       Loaded="Page_Loaded"
-      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
       FontFamily="{DynamicResource MaterialDesignFont}"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="DatabaseLayerPages">
 
-    <Grid Background="White">
+    <Grid Background="#FAFAFA">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <!-- Top Controls -->
+            <!-- Header -->
             <RowDefinition Height="Auto"/>
-            <!-- Parameters Panel -->
+            <!-- Connections / Queries / Run -->
             <RowDefinition Height="Auto"/>
-            <!-- Run Query Button -->
+            <!-- Parameters Card -->
             <RowDefinition Height="*"/>
             <!-- DataGrid -->
-            <RowDefinition Height="Auto"/>
-            <!-- Export Button -->
         </Grid.RowDefinitions>
 
-        <!-- Top Controls: ComboBoxes + Buttons -->
-        <Grid Grid.Row="0" Margin="20">
+        <!-- ROW 0: HEADER -->
+        <Grid Grid.Row="0" Margin="20,10,20,10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <!-- ComboBoxes -->
-            <StackPanel Orientation="Vertical" Grid.Column="0" HorizontalAlignment="Left">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="20"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-
-                    <ComboBox x:Name="cbxConnections"
-                              Width="250"
-                              PreviewKeyUp="cbxConnections_PreviewKeyUp"
-                              IsEditable="True"
-                              IsTextSearchEnabled="False"
-                              StaysOpenOnEdit="True"
-                              TextSearch.TextPath="Display"
-                              SelectionChanged="cbxConnections_SelectionChanged"
-                              Style="{StaticResource MaterialDesignOutlinedComboBox}"
-                              materialDesign:HintAssist.Hint="Select Connection"
-                              Grid.Column="0" VerticalAlignment="Bottom"/>
-
-                    <ComboBox x:Name="cbxQueries"
-                              Width="250"
-                              PreviewKeyUp="cbxQueries_PreviewKeyUp"
-                              IsEditable="True"
-                              StaysOpenOnEdit="True"
-                              SelectionChanged="cbxQueries_SelectionChanged"
-                              Style="{StaticResource MaterialDesignOutlinedComboBox}"
-                              materialDesign:HintAssist.Hint="Select Query"
-                              Grid.Column="2"/>
-                </Grid>
+            <!-- Title -->
+            <StackPanel Orientation="Vertical" Grid.Column="0">
+                <TextBlock Text="Database"
+                           FontSize="20"
+                           FontWeight="Bold"
+                           Foreground="#333"/>
+                <TextBlock Text="Execute predefined queries on selected connections"
+                           FontSize="14"
+                           Margin="0,0,0,0"
+                           Foreground="#666"/>
             </StackPanel>
 
-            <!-- Buttons -->
-            <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top">
-                <Button Content="Connections"
-                        x:Name="btnConnections"
+            <!-- Top buttons: Connections / Queries / Refresh -->
+            <StackPanel Grid.Column="1"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center">
+                <Button x:Name="btnConnections"
                         Click="btnConnections_Click"
-                        Foreground="#ffffff"
-                        Background="#b9052f"
-                        materialDesign:ButtonAssist.CornerRadius="16"
-                        Style="{StaticResource MaterialDesignRaisedButton}"
-                        Width="150"
-                        Margin="0,0,10,0"/>
-
-                <Button Content="Queries"
-                        x:Name="btnQueries"
-                        Foreground="#ffffff"
-                        Background="#b9052f"
-                        materialDesign:ButtonAssist.CornerRadius="16"
-                        Style="{StaticResource MaterialDesignRaisedButton}"
-                        Width="150" Click="Button_Click_1"/>
-
-                <Button Name="btnRefresh"
-                    Style="{StaticResource topButton}"
-                    Margin="10,0,10,0"
-                    Click="btnRefresh_Click">
-                    <Icon:PackIconMaterial Kind="Refresh" Width="14" Height="14"/>
+                        Style="{StaticResource topButton}"
+                        Margin="0,0,5,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Icon:PackIconMaterial Kind="Database" Width="16" Height="16" Margin="0,0,5,0"/>
+                        
+                    </StackPanel>
                 </Button>
 
+                <Button x:Name="btnQueries"
+                        Click="Button_Click_1"
+                        Style="{StaticResource topButton}"
+                        Margin="0,0,5,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Icon:PackIconMaterial Kind="UploadNetwork" Width="16" Height="16" Margin="0,0,5,0"/>
+                        
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="btnRefresh"
+                        Style="{StaticResource topButton}"
+                        Margin="0,0,0,0"
+                        Click="btnRefresh_Click">
+                    <Icon:PackIconMaterial Kind="Refresh" Width="18" Height="18"/>
+                </Button>
             </StackPanel>
         </Grid>
 
-        <!-- Parameters Panel -->
-        <Border Grid.Row="1"
-                BorderBrush="#b9052f"
-                BorderThickness="1.5"
-                CornerRadius="5"
-                Margin="20,10,20,10"
-                Background="White"
-                Padding="10">
+        <!-- ROW 1: CONNECTION / QUERY + RUN / EXPORT -->
+        <materialDesign:Card Grid.Row="1" Margin="20,0,20,10" Padding="15">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Connection -->
+                <ComboBox x:Name="cbxConnections"
+                          Grid.Column="0"
+                          Margin="0,0,10,0"
+                          Width="Auto"
+                          PreviewKeyUp="cbxConnections_PreviewKeyUp"
+                          IsEditable="True"
+                          IsTextSearchEnabled="False"
+                          StaysOpenOnEdit="True"
+                          TextSearch.TextPath="Display"
+                          SelectionChanged="cbxConnections_SelectionChanged"
+                          Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                          materialDesign:HintAssist.Hint="Select Connection"/>
+
+                <!-- Query -->
+                <ComboBox x:Name="cbxQueries"
+                          Grid.Column="1"
+                          Margin="0,0,10,0"
+                          Width="Auto"
+                          PreviewKeyUp="cbxQueries_PreviewKeyUp"
+                          IsEditable="True"
+                          StaysOpenOnEdit="True"
+                          SelectionChanged="cbxQueries_SelectionChanged"
+                          Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                          materialDesign:HintAssist.Hint="Select Query"/>
+
+                <!-- Run Query -->
+                <Button x:Name="btnRun"
+                        Content="Run Query"
+                        Grid.Column="2"
+                        Margin="0,0,10,0"
+                        Click="Button_ClickAsync"
+                        Background="Black"
+                        Foreground="White"
+                        BorderThickness="0"
+                        Width="150"
+                        Height="40"
+                        materialDesign:ButtonAssist.CornerRadius="24"
+                        Style="{StaticResource MaterialDesignRaisedButton}"/>
+
+                <!-- Export to Excel -->
+                <Button x:Name="btnExportToExcel"
+                        Content="Export to Excel"
+                        Grid.Column="3"
+                        Margin="0,0,10,0"
+                        Click="btnExportToExcel_Click"
+                        Background="#4CAF50"
+                        Foreground="White"
+                        BorderBrush="Transparent"
+                        Width="150"
+                        Height="40"
+                        Style="{StaticResource MaterialDesignRaisedButton}"
+                        materialDesign:ButtonAssist.CornerRadius="24"/>
+
+                <!-- Loading Spinner -->
+                <ProgressBar x:Name="pbLoading"
+                             Grid.Column="4"
+                             Width="40"
+                             Height="40"
+                             IsIndeterminate="True"
+                             Visibility="Collapsed"
+                             VerticalAlignment="Center"
+                             Style="{StaticResource MaterialDesignCircularProgressBar}"/>
+            </Grid>
+        </materialDesign:Card>
+
+        <!-- ROW 2: PARAMETERS CARD -->
+        <materialDesign:Card Grid.Row="2" Margin="20,0,20,10" Padding="10">
             <StackPanel>
                 <!-- Header -->
-                <Border Padding="6,3" CornerRadius="3" HorizontalAlignment="Center" Margin="0,0,0,5">
+                <Border Padding="6,3"
+                        CornerRadius="3"
+                        HorizontalAlignment="Left"
+                        Margin="0,0,0,5">
                     <TextBlock Text="Required Parameters"
                                Foreground="#b9052f"
                                FontWeight="Bold"
                                FontSize="13"/>
                 </Border>
 
-                <!-- ScrollViewer -->
-                <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+                <!-- ScrollViewer with Parameters -->
+                <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                              VerticalScrollBarVisibility="Disabled">
                     <StackPanel x:Name="ParametersPanel"
                                 Orientation="Horizontal"
                                 HorizontalAlignment="Left"
                                 Margin="0"/>
                 </ScrollViewer>
             </StackPanel>
-        </Border>
+        </materialDesign:Card>
 
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-
-        </StackPanel>
-        <!-- Run Query Button -->
-        <Grid Grid.Row="2" Margin="20,10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-
-            <!-- Run Button -->
-            <Button x:Name="btnRun"
-            Content="Run Query"
-            Click="Button_ClickAsync"
-            Background="Black"
-            Foreground="White"
-            BorderThickness="0"
-            Width="250"
-            Height="40"
-            materialDesign:ButtonAssist.CornerRadius="12"
-            Style="{StaticResource MaterialDesignRaisedButton}"
-            Grid.Column="1"/>
-
-            <!-- Loading Spinner -->
-            <ProgressBar x:Name="pbLoading"
-                Width="40"
-                Height="40"
-                IsIndeterminate="True"
-                Visibility="Collapsed"
-                Margin="10,0,0,0"
-                VerticalAlignment="Center"
-                Style="{StaticResource MaterialDesignCircularProgressBar}"/>
-        </Grid>
-
-        <!-- DataGrid -->
-        <DataGrid Grid.Row="3"
-                  x:Name="ResultsDataGrid"
+        <!-- ROW 3: DATAGRID -->
+        <DataGrid x:Name="ResultsDataGrid"
+                  Grid.Row="3"
+                  RowHeight="24"
                   Margin="20,0,20,20"
                   AutoGenerateColumns="True"
                   CanUserAddRows="False"
                   CanUserDeleteRows="False"
-                  IsReadOnly="True"
                   CanUserResizeColumns="True"
-                  VerticalScrollBarVisibility="Auto"
-                  HorizontalScrollBarVisibility="Auto"
+                  IsReadOnly="True"
                   HeadersVisibility="Column"
+                  SelectionUnit="Cell"
+                  SelectionMode="Extended"
                   GridLinesVisibility="All"
-                  BorderBrush="#dddddd"
+                  BorderBrush="#d0d0d0"
                   BorderThickness="1"
                   HorizontalGridLinesBrush="#e0e0e0"
                   VerticalGridLinesBrush="#e0e0e0"
-                  RowBackground="White"
-                  AlternatingRowBackground="#fafafa"
-                  Style="{StaticResource MaterialDesignDataGrid}"
-                  ColumnWidth="Auto"
-                  SelectionMode="Extended"
-                  SelectionUnit="Cell"
-                  materialDesign:DataGridAssist.CellPadding="8"
-                  materialDesign:DataGridAssist.ColumnHeaderPadding="10">
+                  AutoGeneratingColumn="ResultsDataGrid_AutoGeneratingColumn">
 
-            <!-- Highlight و TextBrush -->
-            <DataGrid.Resources>
-                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
-                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black"/>
-            </DataGrid.Resources>
-
-            <!-- Cell Style -->
+            <!-- CellStyle -->
             <DataGrid.CellStyle>
                 <Style TargetType="DataGridCell">
-                    <Setter Property="Padding" Value="5"/>
+                    <Setter Property="Padding" Value="6"/>
                     <Setter Property="BorderThickness" Value="0.5"/>
-                    <Setter Property="BorderBrush" Value="#dddddd"/>
-                    <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=Content.Text}"/>
+                    <Setter Property="BorderBrush" Value="#d0d0d0"/>
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="SnapsToDevicePixels" Value="True"/>
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="DataGridCell">
-                                <Border BorderBrush="{TemplateBinding BorderBrush}"
-                                        BorderThickness="{TemplateBinding BorderThickness}"
-                                        Background="{TemplateBinding Background}">
-                                    <TextBlock Text="{Binding Path=Content.Text, RelativeSource={RelativeSource TemplatedParent}}"
-                                               TextWrapping="Wrap"
-                                               VerticalAlignment="Top"
-                                               HorizontalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                </Style>
-            </DataGrid.CellStyle>
-
-            <!-- Column Header Style -->
-            <DataGrid.ColumnHeaderStyle>
-                <Style TargetType="DataGridColumnHeader"
-           BasedOn="{StaticResource MaterialDesignDataGridColumnHeader}">
-                    <Setter Property="Background" Value="#bf072f"/>
-                    <Setter Property="Foreground" Value="White"/>
-                    <Setter Property="FontWeight" Value="Bold"/>
-                    <Setter Property="FontSize" Value="14"/>
-                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                    <Setter Property="VerticalContentAlignment" Value="Center"/>
-                    <Setter Property="Height" Value="35"/>
-
-                    <!-- الفاصل -->
-                    <Setter Property="BorderBrush" Value="White"/>
-                    <Setter Property="BorderThickness" Value="0,0,1,0"/>
-                </Style>
-            </DataGrid.ColumnHeaderStyle>
-
-
-
-            <!-- Row Style -->
-            <DataGrid.RowStyle>
-                <Style TargetType="DataGridRow">
-                    <Setter Property="FontSize" Value="13"/>
-                    <Setter Property="Height" Value="Auto"/>
-                    <Setter Property="Background" Value="White"/>
-                    <Setter Property="SnapsToDevicePixels" Value="True"/>
-                    <Setter Property="BorderBrush" Value="#dddddd"/>
-                    <Setter Property="BorderThickness" Value="0,0,0,1"/>
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="DataGridRow">
-                                <Border x:Name="RowBorder"
+                                <Border x:Name="CellBorder"
                                         Background="{TemplateBinding Background}"
                                         BorderBrush="{TemplateBinding BorderBrush}"
-                                        BorderThickness="{TemplateBinding BorderThickness}"
-                                        CornerRadius="3"
-                                        SnapsToDevicePixels="True">
-                                    <DataGridCellsPresenter x:Name="CellsPresenter"/>
+                                        BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
                                 </Border>
                                 <ControlTemplate.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter TargetName="RowBorder" Property="Background" Value="#fff2f2"/>
+                                        <Setter TargetName="CellBorder"
+                                                Property="Background"
+                                                Value="#eaf3ff"/>
                                     </Trigger>
                                     <Trigger Property="IsSelected" Value="True">
-                                        <Setter TargetName="RowBorder" Property="Background" Value="#ffe6e6"/>
-                                        <Setter Property="Foreground" Value="#bf072f"/>
-                                        <Setter Property="FontWeight" Value="Bold"/>
-                                        <Setter Property="Effect">
-                                            <Setter.Value>
-                                                <DropShadowEffect Color="#bf072f"
-                                                                  BlurRadius="10"
-                                                                  ShadowDepth="0"
-                                                                  Opacity="0.2"/>
-                                            </Setter.Value>
-                                        </Setter>
+                                        <Setter TargetName="CellBorder"
+                                                Property="Background"
+                                                Value="Black"/>
+                                        <Setter TargetName="CellBorder"
+                                                Property="BorderBrush"
+                                                Value="#333333"/>
+                                        <Setter Property="Foreground" Value="White"/>
                                     </Trigger>
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>
                         </Setter.Value>
                     </Setter>
                 </Style>
-            </DataGrid.RowStyle>
+            </DataGrid.CellStyle>
+
+            <!-- Column Header Style + Filter -->
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" Value="#bf072f"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="FontSize" Value="14"/>
+                    <Setter Property="Height" Value="60"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                    <Setter Property="BorderBrush" Value="White"/>
+                    <Setter Property="BorderThickness" Value="0,0,1,0"/>
+
+                    <Setter Property="ContentTemplate">
+                        <Setter.Value>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- Column Name -->
+                                    <TextBlock Grid.Row="0"
+                                               Grid.Column="0"
+                                               Grid.ColumnSpan="2"
+                                               Text="{Binding}"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"/>
+
+                                    <!-- Filter ComboBox -->
+                                    <ComboBox Grid.Row="1"
+                                              Grid.Column="0"
+                                              Margin="0,1,0,0"
+                                              FontSize="11"
+                                              MinWidth="70"
+                                              Height="28"
+                                              Loaded="HeaderFilterComboBox_Loaded"
+                                              SelectionChanged="HeaderFilterComboBox_SelectionChanged"
+                                              Tag="{Binding RelativeSource={RelativeSource AncestorType=DataGridColumnHeader},
+                                                            Path=Column.SortMemberPath}"/>
+
+                                    <!-- Clear Filter Button -->
+                                    <Button Grid.Row="1"
+                                            Grid.Column="1"
+                                            Margin="2,1,0,0"
+                                            Width="16"
+                                            Height="16"
+                                            Padding="0"
+                                            Content="✕"
+                                            FontSize="10"
+                                            ToolTip="Clear filter"
+                                            Visibility="Collapsed"
+                                            Loaded="ClearFilterButton_Loaded"
+                                            Click="ClearFilterButton_Click"
+                                            Tag="{Binding RelativeSource={RelativeSource AncestorType=DataGridColumnHeader},
+                                                          Path=Column.SortMemberPath}"/>
+                                </Grid>
+                            </DataTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
 
         </DataGrid>
-
-        <!-- Export Button below DataGrid -->
-        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right" Margin="20,0,20,20">
-            <Button x:Name="btnExportToExcel"
-            Content="Export to Excel"
-            Width="150"
-            Height="40"
-            Background="#4CAF50" 
-            Foreground="White"
-            BorderBrush="Transparent"
-            Click="btnExportToExcel_Click"
-            Style="{StaticResource MaterialDesignRaisedButton}"
-            materialDesign:ButtonAssist.CornerRadius="12"/>
-        </StackPanel>
 
     </Grid>
 </Page>

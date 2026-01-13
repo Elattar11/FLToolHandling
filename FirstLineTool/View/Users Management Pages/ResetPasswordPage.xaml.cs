@@ -97,5 +97,6 @@ namespace FirstLineTool.View.Users_Management_Pages
                 btnResetPassword_ClickAsync(btnResetPassword_ClickAsync, null);
             }
         }
+        
     }
 }

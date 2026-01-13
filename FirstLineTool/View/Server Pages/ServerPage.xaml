@@ -4,180 +4,182 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FirstLineTool.View.Server_Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:fa="http://schemas.fontawesome.io/icons/"
+      xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
       mc:Ignorable="d" 
       Loaded="Page_Loaded"
       d:DesignHeight="450" d:DesignWidth="800"
-      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:fa="http://schemas.fontawesome.io/icons/" xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
       FontFamily="{DynamicResource MaterialDesignFont}"
       Title="ServerPage">
 
-    <DockPanel Background="White" LastChildFill="True" VerticalAlignment="Top">
+    <Grid Background="#FAFAFA">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Header -->
+            <RowDefinition Height="Auto"/>
+            <!-- Command + Run -->
+            <RowDefinition Height="Auto"/>
+            <!-- Parameters -->
+            <RowDefinition Height="*"/>
+            <!-- StatusPanel -->
+        </Grid.RowDefinitions>
 
-        <Grid DockPanel.Dock="Top" Margin="20">
+        <!-- ROW 0: HEADER -->
+        <Grid Grid.Row="0" Margin="20,10,20,10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-                <!-- شمال -->
                 <ColumnDefinition Width="Auto"/>
-                <!-- يمين -->
             </Grid.ColumnDefinitions>
 
-
-            <StackPanel Orientation="Vertical" Grid.Column="0" HorizontalAlignment="Left">
-
-                <!-- ✅ صف للكومبو بوكسات -->
-                <Grid Margin="0,0,0,0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="20"/>
-                        <!-- مسافة بينهم -->
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-
-                    <ComboBox x:Name="cbxCommands"
-                        Width="250"
-                        PreviewKeyUp="cbxCommands_PreviewKeyUp"
-                        IsEditable="True"
-                        IsTextSearchEnabled="False"
-                        StaysOpenOnEdit="True"
-                        TextSearch.TextPath="Display"
-                        SelectionChanged="cbxCommands_SelectionChanged"
-                        Style="{StaticResource MaterialDesignOutlinedComboBox}"
-                        materialDesign:HintAssist.Hint="Select Command"
-                        Grid.Column="0" VerticalAlignment="Bottom"/>
-
-                </Grid>
-
+            <!-- Title + Subtitle -->
+            <StackPanel Orientation="Vertical" Grid.Column="0">
+                <TextBlock Text="Server Commands"
+                           FontSize="20"
+                           FontWeight="Bold"
+                           Foreground="#333"/>
+                <TextBlock Text="Run predefined server commands with parameters"
+                           FontSize="14"
+                           Margin="0,5,0,0"
+                           Foreground="#666"/>
             </StackPanel>
-            <!-- ✅ الزرارين على اليمين -->
-            <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top">
 
-                
+            <!-- Top Right Buttons -->
+            <StackPanel Grid.Column="1"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center">
 
-                <Button Content="Paths"
-                x:Name="btnConnections"
-                
-                Foreground="#ffffff"
-                Background="#b9052f"
-                materialDesign:ButtonAssist.CornerRadius="16"
-                Style="{StaticResource MaterialDesignRaisedButton}"
-                Width="150"
-                Margin="0,0,10,0" Click="btnConnections_Click"/>
-
-                <Button Content="Parameters"
-                        x:Name="btnParameters"
-                          Foreground="#ffffff"
-                          Background="#b9052f"
-                          materialDesign:ButtonAssist.CornerRadius="16"
-                          Style="{StaticResource MaterialDesignRaisedButton}"
-                          Width="150" Click="Button_Click" />
-
-
-                <Button Name="btnSettings"
+                <!-- Paths -->
+                <Button x:Name="btnConnections"
+                        Click="btnConnections_Click"
                         Style="{StaticResource topButton}"
-                        Margin="10,0,10,0"
-                        Click="btnSettings_Click"
-                       >
-                    <Icon:PackIconMaterial Kind="Cog" Width="14" Height="14"/>
+                        Margin="0,0,5,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Icon:PackIconMaterial Kind="FolderOpen" Width="16" Height="16" Margin="0,0,5,0"/>
+                        
+                    </StackPanel>
                 </Button>
 
-                <Button Name="btnRefresh"
-                    Style="{StaticResource topButton}"
-                    Margin="0,0,10,0"
-                    Click="btnRefresh_Click">
-                    <Icon:PackIconMaterial Kind="Refresh" Width="14" Height="14"/>
+                <!-- Parameters -->
+                <Button x:Name="btnParameters"
+                        Click="Button_Click"
+                        Style="{StaticResource topButton}"
+                        Margin="0,0,5,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Icon:PackIconMaterial Kind="Tune" Width="16" Height="16" Margin="0,0,5,0"/>
+                        
+                    </StackPanel>
                 </Button>
 
+                <!-- Settings -->
+                <Button x:Name="btnSettings"
+                        Style="{StaticResource topButton}"
+                        Margin="0,0,5,0"
+                        Click="btnSettings_Click">
+                    <Icon:PackIconMaterial Kind="Cog" Width="18" Height="18"/>
+                </Button>
 
-
+                <!-- Refresh -->
+                <Button x:Name="btnRefresh"
+                        Style="{StaticResource topButton}"
+                        Margin="0,0,0,0"
+                        Click="btnRefresh_Click">
+                    <Icon:PackIconMaterial Kind="Refresh" Width="18" Height="18"/>
+                </Button>
 
             </StackPanel>
         </Grid>
 
-        <!-- ✅ StackPanel برّه الجريد ومعاه Scroll أفقي -->
-        <Border BorderBrush="#b9052f"
-            BorderThickness="1.5"
-            CornerRadius="5"
-            Margin="20,0,20,10"
-            Background="White"
-            DockPanel.Dock="Top"
-            Padding="10">
+        <!-- ROW 1: COMMAND + RUN -->
+        <materialDesign:Card Grid.Row="1" Margin="20,0,20,10" Padding="15">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
 
+                <!-- Command ComboBox -->
+                <ComboBox x:Name="cbxCommands"
+                          Grid.Column="0"
+                          Margin="0,0,10,0"
+                          Width="Auto"
+                          PreviewKeyUp="cbxCommands_PreviewKeyUp"
+                          IsEditable="True"
+                          IsTextSearchEnabled="False"
+                          StaysOpenOnEdit="True"
+                          TextSearch.TextPath="Display"
+                          SelectionChanged="cbxCommands_SelectionChanged"
+                          Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                          materialDesign:HintAssist.Hint="Select Command"/>
+
+                <!-- Run Command Button -->
+                <Button x:Name="btnRun"
+                        Content="Run Command"
+                        Grid.Column="1"
+                        Margin="0,0,10,0"
+                        Click="Button_ClickAsync"
+                        Background="Black"
+                        Foreground="White"
+                        BorderThickness="0"
+                        Width="150"
+                        Height="40"
+                        HorizontalAlignment="Center"
+                        materialDesign:ButtonAssist.CornerRadius="24"
+                        Style="{StaticResource MaterialDesignRaisedButton}"/>
+
+                <!-- Loading Spinner -->
+                <ProgressBar x:Name="pbLoading"
+                             Grid.Column="2"
+                             Width="40"
+                             Height="40"
+                             IsIndeterminate="True"
+                             Visibility="Collapsed"
+                             VerticalAlignment="Center"
+                             Style="{StaticResource MaterialDesignCircularProgressBar}"/>
+
+            </Grid>
+        </materialDesign:Card>
+
+        <!-- ROW 2: PARAMETERS CARD -->
+        <materialDesign:Card Grid.Row="2" Margin="20,0,20,10" Padding="10">
             <StackPanel>
 
-                <!-- ✅ Header باللون الأحمر -->
-                <Border 
-            Padding="6,3"
-            CornerRadius="3"
-            HorizontalAlignment="Center"
-            Margin="0,0,0,5">
+                <!-- Header -->
+                <Border Padding="6,3"
+                        CornerRadius="3"
+                        HorizontalAlignment="Left"
+                        Margin="0,0,0,5">
                     <TextBlock Text="Required Parameters"
-                   Foreground="#b9052f"
-                   FontWeight="Bold"
-                   FontSize="13"/>
+                               Foreground="#b9052f"
+                               FontWeight="Bold"
+                               FontSize="13"/>
                 </Border>
 
-                <!-- ✅ Scroll جوا البانل -->
+                <!-- Parameters Scroll -->
                 <ScrollViewer HorizontalScrollBarVisibility="Auto"
-                  VerticalScrollBarVisibility="Disabled">
+                              VerticalScrollBarVisibility="Disabled">
                     <StackPanel x:Name="ParametersPanel"
-                    Orientation="Horizontal"
-                    HorizontalAlignment="Left"
-                    Margin="0"/>
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Left"
+                                Margin="0"/>
                 </ScrollViewer>
 
             </StackPanel>
-            
-            
-        </Border>
+        </materialDesign:Card>
 
-
-
-        <StackPanel DockPanel.Dock="Top"
-            Orientation="Vertical"
-            HorizontalAlignment="Center"
-            Margin="0,10,0,10">
-
-            <!-- زرار Run -->
-            <Button Content="Run Command"
-            Click="Button_ClickAsync"
-            Background="Black"
-            Foreground="White"
-            BorderThickness="0"
-            x:Name="btnRun"
-            Width="250"
-            Height="40"
-            HorizontalAlignment="Center"
-            materialDesign:ButtonAssist.CornerRadius="12"
-            Style="{StaticResource MaterialDesignRaisedButton}"/>
-
-            <!-- 🔄 Spinner تحت الزرار مباشرة -->
-            <ProgressBar x:Name="pbLoading"
-                 Width="45"
-                 Height="45"
-                 IsIndeterminate="True"
-                 Visibility="Collapsed"
-                 Margin="0,10,0,0"
-                 HorizontalAlignment="Center"
-                 Style="{StaticResource MaterialDesignCircularProgressBar}"/>
-        </StackPanel>
-
-        <Border BorderBrush="#b9052f"
-            BorderThickness="1"
-            CornerRadius="5"
-            Margin="20,0,20,20"
-            Background="White"
-            Padding="10">
+        <!-- ROW 3: STATUS PANEL -->
+        <materialDesign:Card Grid.Row="3" Margin="20,0,20,20" Padding="10">
             <ScrollViewer VerticalScrollBarVisibility="Auto"
-                      HorizontalScrollBarVisibility="Disabled"
-                      VerticalContentAlignment="Top">
+                          HorizontalScrollBarVisibility="Disabled">
                 <StackPanel x:Name="StatusPanel"
-                        Orientation="Vertical"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Stretch"
-                        Margin="0" />
+                            Orientation="Vertical"
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Stretch"
+                            Margin="0"/>
             </ScrollViewer>
-        </Border>
+        </materialDesign:Card>
 
-
-    </DockPanel>
+    </Grid>
 </Page>

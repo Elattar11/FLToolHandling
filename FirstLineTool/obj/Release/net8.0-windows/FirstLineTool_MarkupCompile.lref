@@ -8,8 +8,11 @@ FE:\Projects\FirstLineTool\FirstLineTool\View\Database Pages\DatabaseLayerPages.
 FE:\Projects\FirstLineTool\FirstLineTool\View\ExportQueue\ExportQueuePage.xaml;;
 FE:\Projects\FirstLineTool\FirstLineTool\View\ExportQueue\ExportQueueSettings.xaml;;
 FE:\Projects\FirstLineTool\FirstLineTool\View\ExportQueue\QueueQuerySettings.xaml;;
+FE:\Projects\FirstLineTool\FirstLineTool\View\Express Senarios\ExpressTabsPage.xaml;;
 FE:\Projects\FirstLineTool\FirstLineTool\View\Express Senarios\EXTemp.xaml;;
+FE:\Projects\FirstLineTool\FirstLineTool\View\Express Senarios\HealthCheckPage.xaml;;
 FE:\Projects\FirstLineTool\FirstLineTool\View\IN Senarios\INTemp.xaml;;
+FE:\Projects\FirstLineTool\FirstLineTool\View\LoadingScreen.xaml;;
 FE:\Projects\FirstLineTool\FirstLineTool\View\Server Pages\PathParametersPage.xaml;;
 FE:\Projects\FirstLineTool\FirstLineTool\View\Server Pages\ServerPage.xaml;;
 FE:\Projects\FirstLineTool\FirstLineTool\View\Server Pages\ServerPathsPage.xaml;;
@@ -18,6 +21,5 @@ FE:\Projects\FirstLineTool\FirstLineTool\View\Users Management Pages\AllSetPage.
 FE:\Projects\FirstLineTool\FirstLineTool\View\Users Management Pages\PersonalInformationPage.xaml;;
 FE:\Projects\FirstLineTool\FirstLineTool\View\Users Management Pages\ResetPasswordPage.xaml;;
 FE:\Projects\FirstLineTool\FirstLineTool\View\Users Management Pages\TeamsManagementPage.xaml;;
-FE:\Projects\FirstLineTool\FirstLineTool\View\Users Management Pages\UserInformationPage.xaml;;
-FE:\Projects\FirstLineTool\FirstLineTool\View\LoadingScreen.xaml;;
+FE:\Projects\FirstLineTool\FirstLineTool\MainWindow.xaml;;
 

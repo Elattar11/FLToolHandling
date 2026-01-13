@@ -561,3 +561,12 @@ E:\Projects\FirstLineTool\FirstLineTool\obj\Release\net8.0-windows\win-x64\View\
 E:\Projects\FirstLineTool\FirstLineTool\obj\Release\net8.0-windows\win-x64\View\ExportQueue\QueueQuerySettings.baml
 E:\Projects\FirstLineTool\FirstLineTool\obj\Release\net8.0-windows\win-x64\View\LoadingScreen.g.cs
 E:\Projects\FirstLineTool\FirstLineTool\obj\Release\net8.0-windows\win-x64\View\LoadingScreen.baml
+E:\Projects\FirstLineTool\FirstLineTool\obj\Release\net8.0-windows\win-x64\View\Express Senarios\ExpressTabsPage.g.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Release\net8.0-windows\win-x64\View\Express Senarios\HealthCheckPage.g.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Release\net8.0-windows\win-x64\GeneratedInternalTypeHelper.g.cs
+E:\Projects\FirstLineTool\FirstLineTool\obj\Release\net8.0-windows\win-x64\View\Express Senarios\ExpressTabsPage.baml
+E:\Projects\FirstLineTool\FirstLineTool\obj\Release\net8.0-windows\win-x64\View\Express Senarios\HealthCheckPage.baml
+E:\Projects\FirstLineTool\FirstLineTool\obj\Release\net8.0-windows\win-x64\FirstLineTool.sourcelink.json
+E:\Projects\FirstLineTool\FirstLineTool\bin\Release\net8.0-windows\win-x64\Auto assignment.wsdl
+E:\Projects\FirstLineTool\FirstLineTool\obj\Release\net8.0-windows\win-x64\View\ExportQueue\RepeatedComplaintsWindow.baml
+E:\Projects\FirstLineTool\FirstLineTool\obj\Release\net8.0-windows\win-x64\View\ExportQueue\RepeatedComplaintsWindow.g.cs

@@ -4,156 +4,253 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FirstLineTool.View.Dashboard"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:wpfplot="http://oxyplot.org/wpf"
       mc:Ignorable="d" 
-      
-      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:wpfplot="http://oxyplot.org/wpf"
+      Loaded="Page_Loaded"
       FontFamily="{DynamicResource MaterialDesignFont}"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="DashboardPage">
 
-    <Grid Background="White" Margin="10">
+    <Grid Background="#FAFAFA">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <!-- زرار Run -->
+            <!-- Top Bar -->
             <RowDefinition Height="Auto"/>
-            <!-- الكروت -->
+            <!-- Actions Card -->
             <RowDefinition Height="Auto"/>
-            <!-- زرار Get My SRs -->
+            <!-- Stats Cards Card -->
             <RowDefinition Height="*"/>
             <!-- DataGrid -->
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Top"
-            Margin="10">
-            <!-- زرار Backup -->
-            <Button Name="btnBackup"
-            Style="{StaticResource topButton}"
-            Click="btnBackup_ClickAsync"
-            Margin="0,0,10,0">
-                <materialDesign:PackIcon Kind="Backup" Width="18" Height="18"/>
-            </Button>
 
-            <!-- زرار Settings -->
-            <Button Name="btnSettings"
-            Style="{StaticResource topButton}"
-            Click="btnSettings_Click">
-                <materialDesign:PackIcon Kind="Cog" Width="18" Height="18"/>
-            </Button>
-        </StackPanel>
-
-
-        <!-- زرار Run فوق الكروت -->
-        <Button Name="btnRun" 
-                Content="Run My Dashboard"
-                Foreground="White"
-                Background="#b9052f"
-                BorderBrush="Transparent"
-                Click="btnRun_ClickAsync"
-                materialDesign:ButtonAssist.CornerRadius="24"
-                Style="{StaticResource MaterialDesignRaisedButton}"
-                Width="200" Height="50" HorizontalAlignment="Center" Margin="0,10,0,10"
-                />
-
-        <!-- StackPanel الكروت -->
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10" Grid.Row="1">
-            <!-- Handled Card -->
-            <Border Width="180" Height="100" CornerRadius="16" Margin="10" Padding="10">
-                <Border.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                        <GradientStop Color="#B328A745" Offset="0"/>
-                        <GradientStop Color="#B328A745" Offset="1"/>
-                    </LinearGradientBrush>
-                </Border.Background>
-                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <TextBlock Text="Handled" Foreground="White" FontWeight="Bold" FontSize="16"/>
-                    <TextBlock x:Name="lblHandled" Text="0" FontSize="28" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center"/>
-                </StackPanel>
-            </Border>
-
-            <!-- Rejected Card -->
-            <Border Width="180" Height="100" CornerRadius="16" Margin="10" Padding="10">
-                <Border.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                        <GradientStop Color="#BDDC3545" Offset="0"/>
-                        <GradientStop Color="#BDDC3545" Offset="1"/>
-                    </LinearGradientBrush>
-                </Border.Background>
-                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <TextBlock Text="Rejected" Foreground="White" FontWeight="Bold" FontSize="16"/>
-                    <TextBlock x:Name="lblRejected" Text="0" FontSize="28" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center"/>
-                </StackPanel>
-            </Border>
-
-            <!-- Total Card -->
-            <Border Width="180" Height="100" CornerRadius="16" Margin="10" Padding="10">
-                <Border.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                        <GradientStop Color="#B35A5CAD" Offset="0"/>
-                        <GradientStop Color="#B35A5CAD" Offset="1"/>
-                    </LinearGradientBrush>
-                </Border.Background>
-                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <TextBlock Text="Total" Foreground="White" FontWeight="Bold" FontSize="16"/>
-                    <TextBlock x:Name="lblTotal" Text="0" FontSize="28" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center"/>
-                </StackPanel>
-            </Border>
-        </StackPanel>
-
-        <Grid Grid.Row="2" Margin="10,0,10,10">
+        <!-- ========== Row 0: Top Bar (Title + Actions) ========== -->
+        <Grid Grid.Row="0" Margin="20,10,20,10">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <!-- للزرار -->
                 <ColumnDefinition Width="*"/>
-                <!-- للفراغ -->
                 <ColumnDefinition Width="Auto"/>
-                <!-- للTextBlock -->
             </Grid.ColumnDefinitions>
 
-            <!-- زرار على الشمال -->
-            <Button Content="Get My Assigned SRs"
-            x:Name="btnExport"
-            Click="btnExport_ClickAsync"
-            Foreground="White"
-            Background="#b9052f"
-            Margin="20,0,0,0"
-            BorderBrush="Transparent"
-            materialDesign:ButtonAssist.CornerRadius="24"
-            Style="{StaticResource MaterialDesignRaisedButton}"
-            Width="200"
-            Height="50"
-            Grid.Column="0" VerticalAlignment="Top"/>
+            <!-- عنوان -->
+            <StackPanel Orientation="Vertical"
+                        VerticalAlignment="Center"
+                        Grid.Column="0">
+                <TextBlock Text="My Dashboard"
+                           FontSize="22"
+                           FontWeight="Bold"
+                           Foreground="#333"/>
+                <TextBlock Text="Quick overview of your SR performance"
+                           FontSize="12"
+                           Foreground="#777"/>
+            </StackPanel>
 
-            <!-- TextBlock على اليمين -->
-            <TextBlock x:Name="txtTotalQueue"
-               FontWeight="Bold"
-               FontSize="16"
-               Margin="0 0 20 0"
-               Foreground="Black"
-               VerticalAlignment="Center"
-               Grid.Column="2"
-               Text="Total Queue: 0"/>
+            <!-- أزرار Backup + Settings -->
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Grid.Column="1">
+
+                <!-- زرار Backup -->
+                <Button Name="btnBackup"
+                        Style="{StaticResource topButton}"
+                        Click="btnBackup_ClickAsync"
+                        Margin="0,0,8,0">
+                    <materialDesign:PackIcon Kind="Backup" Width="18" Height="18"/>
+                </Button>
+
+                <!-- زرار Settings -->
+                <Button Name="btnSettings"
+                        Style="{StaticResource topButton}"
+                        Click="btnSettings_Click">
+                    <materialDesign:PackIcon Kind="Cog" Width="18" Height="18"/>
+                </Button>
+            </StackPanel>
         </Grid>
-        <!-- DataGrid -->
-        <DataGrid x:Name="ResultsDataGrid"
-          Grid.Row="3"
-          RowHeight="24"
-          Margin="20,0,20,20"
-          AutoGenerateColumns="True"
-          CanUserAddRows="False"
-          CanUserDeleteRows="False"
-          CanUserResizeColumns="True"
-          IsReadOnly="True"
-          HeadersVisibility="Column"
-          SelectionUnit="Cell"
-          SelectionMode="Extended"
-          GridLinesVisibility="All"
-          BorderBrush="#d0d0d0"
-          BorderThickness="1"
-          HorizontalGridLinesBrush="#e0e0e0"
-          VerticalGridLinesBrush="#e0e0e0"
-          AutoGeneratingColumn="ResultsDataGrid_AutoGeneratingColumn">
 
+        <!-- ========== Row 1: Actions Card (Run + Get SRs + Total) ========== -->
+        <materialDesign:Card Grid.Row="1"
+                             Margin="20,0,20,10"
+                             Padding="15">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <!-- Buttons -->
+                    <ColumnDefinition Width="*"/>
+                    <!-- Spacer -->
+                    <ColumnDefinition Width="Auto"/>
+                    <!-- Total Queue -->
+                </Grid.ColumnDefinitions>
+
+                <!-- أزرار Run + Get SRs -->
+                <StackPanel Grid.Column="0"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Margin="0,0,0,0">
+
+                    <!-- Run My Dashboard -->
+                    <Button Name="btnRun" 
+                            Content="Run My Dashboard"
+                            Foreground="White"
+                            Background="#b9052f"
+                            BorderBrush="Transparent"
+                            Click="btnRun_ClickAsync"
+                            materialDesign:ButtonAssist.CornerRadius="24"
+                            Style="{StaticResource MaterialDesignRaisedButton}"
+                            Width="200"
+                            Height="40"
+                            Margin="0,0,8,0"/>
+
+                    <!-- Get My Assigned SRs -->
+                    <Button Content="Get My Assigned SRs"
+                            x:Name="btnExport"
+                            Click="btnExport_ClickAsync"
+                            Foreground="White"
+                            Background="#b9052f"
+                            Margin="0,0,0,0"
+                            BorderBrush="Transparent"
+                            materialDesign:ButtonAssist.CornerRadius="24"
+                            Style="{StaticResource MaterialDesignRaisedButton}"
+                            Width="200"
+                            Height="40"/>
+                </StackPanel>
+
+                <!-- Total Queue Text -->
+                <TextBlock x:Name="txtTotalQueue"
+                           Grid.Column="2"
+                           FontWeight="Bold"
+                           FontSize="14"
+                           Margin="0,0,0,0"
+                           Foreground="#333"
+                           VerticalAlignment="Center"
+                           Text="Total Queue: 0"/>
+            </Grid>
+        </materialDesign:Card>
+
+        <!-- ========== Row 2: Stats Cards داخل Card واحد ========== -->
+        <materialDesign:Card Grid.Row="2"
+                             Margin="20,0,20,10"
+                             Padding="10"
+                             materialDesign:ShadowAssist.ShadowDepth="Depth1">
+            <UniformGrid Rows="1"
+                         Columns="3"
+                         HorizontalAlignment="Stretch"
+                         Margin="0">
+
+                <!-- Handled Card -->
+                <materialDesign:Card Margin="4"
+                                     Padding="12"
+                                     Width="Auto"
+                                     Height="110"
+                                     Background="#FF4CAF50"
+                                     materialDesign:ShadowAssist.ShadowDepth="Depth2">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="Handled"
+                                   FontSize="14"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   Grid.Row="0"/>
+
+                        <TextBlock x:Name="lblHandled"
+                                   Text="0"
+                                   FontSize="32"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   HorizontalAlignment="Right"
+                                   VerticalAlignment="Bottom"
+                                   Grid.Row="1"/>
+                    </Grid>
+                </materialDesign:Card>
+
+                <!-- Rejected Card -->
+                <materialDesign:Card Margin="4"
+                                     Padding="12"
+                                     Width="Auto"
+                                     Height="110"
+                                     Background="#FFF44336"
+                                     materialDesign:ShadowAssist.ShadowDepth="Depth2">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="Rejected"
+                                   FontSize="14"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   Grid.Row="0"/>
+
+                        <TextBlock x:Name="lblRejected"
+                                   Text="0"
+                                   FontSize="32"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   HorizontalAlignment="Right"
+                                   VerticalAlignment="Bottom"
+                                   Grid.Row="1"/>
+                    </Grid>
+                </materialDesign:Card>
+
+                <!-- Total Card -->
+                <materialDesign:Card Margin="4"
+                                     Padding="12"
+                                     Width="Auto"
+                                     Height="110"
+                                     Background="#FF3F51B5"
+                                     materialDesign:ShadowAssist.ShadowDepth="Depth2">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="Total"
+                                   FontSize="14"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   Grid.Row="0"/>
+
+                        <TextBlock x:Name="lblTotal"
+                                   Text="0"
+                                   FontSize="32"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   HorizontalAlignment="Right"
+                                   VerticalAlignment="Bottom"
+                                   Grid.Row="1"/>
+                    </Grid>
+                </materialDesign:Card>
+
+            </UniformGrid>
+        </materialDesign:Card>
+
+        <!-- ========== Row 3: DataGrid ========== -->
+        <DataGrid x:Name="ResultsDataGrid"
+                  Grid.Row="3"
+                  RowHeight="24"
+                  Margin="20,0,20,20"
+                  AutoGenerateColumns="True"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  CanUserResizeColumns="True"
+                  IsReadOnly="True"
+                  HeadersVisibility="Column"
+                  SelectionUnit="Cell"
+                  SelectionMode="Extended"
+                  GridLinesVisibility="All"
+                  BorderBrush="#d0d0d0"
+                  BorderThickness="1"
+                  HorizontalGridLinesBrush="#e0e0e0"
+                  VerticalGridLinesBrush="#e0e0e0"
+                  AutoGeneratingColumn="ResultsDataGrid_AutoGeneratingColumn">
+
+            <!-- CellStyle -->
             <DataGrid.CellStyle>
                 <Style TargetType="DataGridCell">
                     <Setter Property="Padding" Value="6"/>
@@ -166,18 +263,25 @@
                         <Setter.Value>
                             <ControlTemplate TargetType="DataGridCell">
                                 <Border x:Name="CellBorder"
-                                Background="{TemplateBinding Background}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}">
-                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        Background="{TemplateBinding Background}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
                                 </Border>
                                 <ControlTemplate.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter TargetName="CellBorder" Property="Background" Value="#eaf3ff"/>
+                                        <Setter TargetName="CellBorder"
+                                                Property="Background"
+                                                Value="#eaf3ff"/>
                                     </Trigger>
                                     <Trigger Property="IsSelected" Value="True">
-                                        <Setter TargetName="CellBorder" Property="Background" Value="Black"/>
-                                        <Setter TargetName="CellBorder" Property="BorderBrush" Value="#333333"/>
+                                        <Setter TargetName="CellBorder"
+                                                Property="Background"
+                                                Value="Black"/>
+                                        <Setter TargetName="CellBorder"
+                                                Property="BorderBrush"
+                                                Value="#333333"/>
                                         <Setter Property="Foreground" Value="White"/>
                                     </Trigger>
                                 </ControlTemplate.Triggers>
@@ -187,23 +291,74 @@
                 </Style>
             </DataGrid.CellStyle>
 
+            <!-- Column Header Style + فلتر -->
             <DataGrid.ColumnHeaderStyle>
                 <Style TargetType="DataGridColumnHeader">
                     <Setter Property="Background" Value="#bf072f"/>
                     <Setter Property="Foreground" Value="White"/>
                     <Setter Property="FontWeight" Value="Bold"/>
                     <Setter Property="FontSize" Value="14"/>
-                    <Setter Property="Height" Value="35"/>
+                    <Setter Property="Height" Value="60"/>
                     <Setter Property="HorizontalContentAlignment" Value="Center"/>
                     <Setter Property="VerticalContentAlignment" Value="Center"/>
                     <Setter Property="BorderBrush" Value="White"/>
                     <Setter Property="BorderThickness" Value="0,0,1,0"/>
+
+                    <Setter Property="ContentTemplate">
+                        <Setter.Value>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- اسم العمود -->
+                                    <TextBlock Grid.Row="0"
+                                               Grid.Column="0"
+                                               Grid.ColumnSpan="2"
+                                               Text="{Binding}"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"/>
+
+                                    <!-- ComboBox للفلاتر -->
+                                    <ComboBox Grid.Row="1"
+                                              Grid.Column="0"
+                                              Margin="0,1,0,0"
+                                              FontSize="11"
+                                              MinWidth="70"
+                                              Height="28"
+                                              Loaded="cbxFilter_Loaded"
+                                              SelectionChanged="cbxFilter_SelectionChanged"
+                                              Tag="{Binding RelativeSource={RelativeSource AncestorType=DataGridColumnHeader},
+                                                            Path=Column.SortMemberPath}"/>
+
+                                    <!-- زرار مسح الفلتر -->
+                                    <Button Grid.Row="1"
+                                            Grid.Column="1"
+                                            Margin="2,1,0,0"
+                                            Width="16"
+                                            Height="16"
+                                            Padding="0"
+                                            Content="✕"
+                                            FontSize="10"
+                                            ToolTip="Clear filter"
+                                            Visibility="Collapsed"
+                                            Loaded="btnClearFilter_Loaded"
+                                            Click="btnClearFilter_Click"
+                                            Tag="{Binding RelativeSource={RelativeSource AncestorType=DataGridColumnHeader},
+                                                          Path=Column.SortMemberPath}"/>
+                                </Grid>
+                            </DataTemplate>
+                        </Setter.Value>
+                    </Setter>
                 </Style>
             </DataGrid.ColumnHeaderStyle>
 
         </DataGrid>
-
-       
-
     </Grid>
 </Page>
